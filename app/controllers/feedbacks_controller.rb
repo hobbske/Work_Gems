@@ -5,6 +5,21 @@ class FeedbacksController < ApplicationController
   end
 
   def create
+    @feedback = Feedback.new(feedback_params)
+
+    if @feedback.save
+      flash[:success] = "Feedback Successfully Sent."
+      redirect_to new_feedback_path
+    else
+      flash[:danger] = "Error! Feedback Not Sent."
+      redirect_to new_feedback_path
+    end
+
   end
+
+  private
+    def feedback_params
+      params.require(:feedback).permit(:name, :email, :comments)
+    end
 
 end
