@@ -8,6 +8,13 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
+      
+      name = params[:feedback][:name]
+      email = params[:feedback][:email]
+      body = params[:feedback][:comments]
+      
+      FeedbackMailer.feedback_email(name, email, body).deliver
+      
       flash[:success] = "Feedback Successfully Sent."
       redirect_to new_feedback_path
     else
