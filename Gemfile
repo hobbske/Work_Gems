@@ -3,13 +3,16 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3', group: [:development, :test]
 
-# Use postgresql as database for ActiveRecord
-gem 'pg'
-# Use rails 12factor to enable all platform features
-gem 'rails_12factor', '~> 0.0.3'
+
+group :production do
+  # Use postgresql as database for ActiveRecord
+  gem 'pg'
+  # Use rails 12factor to enable all platform features
+  gem 'rails_12factor', '~> 0.0.3'
+end
+
+
 # Use Bootstrap for general stylings
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
@@ -45,6 +48,9 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
