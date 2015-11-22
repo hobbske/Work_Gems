@@ -1,22 +1,57 @@
-<%= link_to "Create your profile", new_user_profile_path(current_user) if current_user %>
+
 
 <div class="jumbotron text-center">
   <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
   <h3> The easiest way to showcase the gems of your work! </h3>
 </div>
+
 <div class="row">
+  <% if user_signed_in? %>
+
+  <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center"> Your Profile </h2>
+        <% if current_user.profile %>
+          <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
+          <i class="fa fa-search"></i> View Your Profile
+          <% end %>
+
+          <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
+            <i class="fa fa-pencil"></i> Edit Your Profile
+          <% end %>
+
+        <% else %>
+          <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-danger btn-lg btn-block' %>
+        <% end %>
+        
+      </div>
+  </div>
+
   <div class="col-md-6">
     <div class="well">
-      <h2 class="text-center">Basic Membership</h2>
-      <h4 class="text-center">Enter Description Here</h4>
-      <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-warning btn-lg btn-block' %>
+      <h2 class="text-center"> View Community </h2>
+      <p> Visit the community to meet other professional to share resources and best practices. </p>
+      <%= link_to "Visit the Community", "#", class: 'btn btn-danger btn-lg btn-block' %>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="well">
-      <h2 class="text-center">Pro Membership</h2>
-      <h4 class="text-center">Enter Description Here</h4>
-      <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
+  </div
+
+  <% else %>
+
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Basic Membership</h2>
+        <h4 class="text-center">Enter Description Here</h4>
+        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-warning btn-lg btn-block' %>
+      </div>
     </div>
-  </div>
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Pro Membership</h2>
+        <h4 class="text-center">Enter Description Here</h4>
+        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
+      </div>
+    </div>
+
+  <% end %>
+
 </div>
