@@ -21,16 +21,17 @@
           <% end %>
 
         <% else %>
+          <p class="text-center"> Create your profile so you can share your information and contribute to the community. </p>
           <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-danger btn-lg btn-block' %>
         <% end %>
-        
+
       </div>
   </div>
 
   <div class="col-md-6">
     <div class="well">
-      <h2 class="text-center"> View Community </h2>
-      <p> Visit the community to meet other professional to share resources and best practices. </p>
+      <h2 class="text-center"> The Community </h2>
+      <p class="text-center"> Visit the community to meet other professional to share resources and best practices. </p>
       <%= link_to "Visit the Community", "#", class: 'btn btn-danger btn-lg btn-block' %>
     </div>
   </div
