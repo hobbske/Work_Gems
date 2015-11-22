@@ -1,6 +1,11 @@
-<%= @user %> </br>
+
 <%= @user.profile.company_name %> </br>
-<% if current_user.plan_id == 2 %>
+<% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
   <%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %>  </br>
   <%= @user.profile.user_id %>  </br>
+  <%= @user.profile.work_number %>  </br>
+  <%= @user.profile.mobile_number %>  </br>
+  <%= @user.profile.linkedin_url %>  </br>
+  <%= @user.profile.facebook_url %>  </br>
+  <%= @user.profile.description %>  </br>
 <% end %>
