@@ -2,7 +2,7 @@
 
 <div class="jumbotron text-center">
   <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
-  <h3> The easiest way to showcase the gems of your work! </h3>
+  <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
 </div>
 
 <div class="row">
@@ -47,14 +47,14 @@
       <div class="well">
         <h2 class="text-center">Basic Membership</h2>
         <h4 class="text-center">Enter Description Here</h4>
-        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-warning btn-lg btn-block' %>
+        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="well">
         <h2 class="text-center">Pro Membership</h2>
         <h4 class="text-center">Enter Description Here</h4>
-        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-warning btn-lg btn-block' %>
+        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
       </div>
     </div>
 
