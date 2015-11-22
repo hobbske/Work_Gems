@@ -1,6 +1,6 @@
 
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center brand-type">
   <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
   <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
 </div>
@@ -10,7 +10,7 @@
 
   <div class="col-md-6">
       <div class="well">
-        <h2 class="text-center"> Your Profile </h2>
+        <h2 class="text-center brand-type"> Your Profile </h2>
         <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <% if current_user.profile %>
           <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
@@ -30,7 +30,7 @@
 
   <div class="col-md-6">
     <div class="well">
-      <h2 class="text-center"> The Community </h2>
+      <h2 class="text-center brand-type"> The Community </h2>
       <p class="text-center"> Visit our community to meet other professional and share resources. </p>
       <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
         <i class="fa fa-users"></i>  View Community
