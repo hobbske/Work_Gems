@@ -4,6 +4,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+body {
+  background-image: url("wood copy.jpg")
+}
+
 .alert-notice {
   color: #8a6d3b;
   background-color: #fcf8e3;
@@ -13,3 +17,4 @@
 .padding {
   padding: 10px;
 }
+

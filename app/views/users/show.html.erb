@@ -1,11 +1,28 @@
 
-<%= @user.profile.company_name %> </br>
-<% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
-  <%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %>  </br>
-  <%= @user.profile.user_id %>  </br>
-  <%= @user.profile.work_number %>  </br>
-  <%= @user.profile.mobile_number %>  </br>
-  <%= @user.profile.linkedin_url %>  </br>
-  <%= @user.profile.facebook_url %>  </br>
-  <%= @user.profile.description %>  </br>
-<% end %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well">
+
+      <h2 class="text-center">My Profile</h2>
+      <p class="text-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+      <h4> <strong>Company: </strong><%= @user.profile.company_name %> </h4>
+
+      <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
+        <h4> <strong>Name: </strong><%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %></h4>
+        <h4> <strong>Work: </strong> <%= @user.profile.work_number %>  </br>
+        <h4> <strong>Mobile: </strong><%= @user.profile.mobile_number %>  </br>
+        <h4> <strong>LinkedIn: </strong><%= @user.profile.linkedin_url %>  </br>
+        <h4> <strong>Facebook: </strong> <%= @user.profile.facebook_url %>  </br>
+        <h4> <strong>Description: </strong><%= @user.profile.description %>  </br>
+      <% end %>
+
+      </br>
+
+      <%= link_to edit_user_profile_path(current_user), class: 'btn btn-danger btn-block' do %>
+        <i class="fa fa-pencil"></i> Edit
+      <% end %>
+
+    </div>
+  </div>
+</div>

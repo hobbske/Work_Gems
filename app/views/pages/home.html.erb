@@ -14,12 +14,9 @@
         <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <% if current_user.profile %>
           <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
-          <i class="fa fa-search"></i> View Your Profile
+          <i class="fa fa-search"></i> View Profile
           <% end %>
 
-        <%= link_to edit_user_profile_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
-            <i class="fa fa-pencil"></i> Edit Your Profile
-          <% end %>
 
         <% else %>
           <p class="text-center"> Create your profile so you can share your information and contribute to the community. </p>
@@ -36,7 +33,7 @@
       <h2 class="text-center"> The Community </h2>
       <p class="text-center"> Visit our community to meet other professional and share resources. </p>
       <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
-        <i class="fa fa-users"></i>  Visit the Community
+        <i class="fa fa-users"></i>  View Community
       <% end %>
     </div>
   </div
