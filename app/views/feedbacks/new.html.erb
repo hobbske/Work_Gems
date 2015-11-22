@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="well">
-      
-      <h1 class="text-center">Give Feedback</h1>
+
+      <h1 class="text-center">Give Feedback <i class="fa fa-commenting"></i></h1>
       <p class="text-center">Let us know how we can make it even easier for you to showcase the gems of your work.</p>
-      
+
       <%= form_for @feedback do |f| %>
 
       <div class="form-group">
@@ -22,7 +22,7 @@
         <%= f.text_area :comments, class: 'form-control' %>
       </div>
 
-      <%= f.submit 'Submit', class: 'btn btn-success' %>
+      <%= f.submit 'Submit', class: 'btn btn-danger' %>
 
       <% end %>
     </div>
