@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   def new
     # form where a user can fill out their own profile.
     @user = User.find(params[:user_id] )
-    @profile = @user.build_profile
+    @profile = Profile.new
   end
 
   def create
@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
       render action: :new
     end
   end
-  
+
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :company_name, :profession, :specialty, :job_title, :work_number, :mobile_number, :linkedin_url, :facebook_url, :description )
