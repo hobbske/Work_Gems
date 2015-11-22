@@ -1,1 +1,6 @@
-<%= @user %>
+<%= @user %> </br>
+<%= @user.profile.company_name %> </br>
+<% if current_user.plan_id == 2 %>
+  <%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %>  </br>
+  <%= @user.profile.user_id %>  </br>
+<% end %>
