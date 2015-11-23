@@ -5,6 +5,7 @@
     <div class="brand-unit-main">
 
       <h3 class="text-center"><%= @user.profile.first_name %>'s Profile</h3>
+      <h5> <%= @user.profile.description %>  </h5>
       <p class="text-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
       <h5> <strong>(w): </strong> <%= @user.profile.work_number %> -- <strong>(m): </strong><%= @user.profile.mobile_number %>  </h5>
       <h4> <strong>Company: </strong><%= @user.profile.company_name %> </h4>
@@ -17,14 +18,13 @@
             <i class="fa fa-facebook-square"></i> <%= @user.profile.facebook_url %>
           <% end %>
         </h4>
-      
+
         <h4>
           <%= link_to @user.profile.linkedin_url do %>
             <i class="fa fa-linkedin-square"></i> <%= @user.profile.linkedin_url %>
           <% end %>
         </h4>
-        
-        <h4> <strong>Description: </strong><%= @user.profile.description %>  </h4>
+
       <% end %>
 
       </br>

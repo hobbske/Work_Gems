@@ -11,8 +11,8 @@
   <div class="col-md-6">
       <div class="brand-unit-main">
         <h2 class="text-center"> Your Profile </h2>
-        <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <% if current_user.profile %>
+        <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
           <i class="fa fa-search"></i> View Profile
           <% end %>
