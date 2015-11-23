@@ -2,24 +2,34 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <div class="well">
+    <div class="brand-unit-main">
 
-      <h2 class="text-center">My Profile</h2>
+      <h3 class="text-center"><%= @user.profile.first_name %>'s Profile</h3>
       <p class="text-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+      <h5> <strong>(w): </strong> <%= @user.profile.work_number %> -- <strong>(m): </strong><%= @user.profile.mobile_number %>  </h5>
       <h4> <strong>Company: </strong><%= @user.profile.company_name %> </h4>
 
       <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
         <h4> <strong>Name: </strong><%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %></h4>
-        <h4> <strong>Work: </strong> <%= @user.profile.work_number %>  </br>
-        <h4> <strong>Mobile: </strong><%= @user.profile.mobile_number %>  </br>
-        <h4> <strong>LinkedIn: </strong><%= @user.profile.linkedin_url %>  </br>
-        <h4> <strong>Facebook: </strong> <%= @user.profile.facebook_url %>  </br>
-        <h4> <strong>Description: </strong><%= @user.profile.description %>  </br>
+
+        <h4>
+          <%= link_to @user.profile.facebook_url do %>
+            <i class="fa fa-facebook-square"></i> <%= @user.profile.facebook_url %>
+          <% end %>
+        </h4>
+      
+        <h4>
+          <%= link_to @user.profile.linkedin_url do %>
+            <i class="fa fa-linkedin-square"></i> <%= @user.profile.linkedin_url %>
+          <% end %>
+        </h4>
+        
+        <h4> <strong>Description: </strong><%= @user.profile.description %>  </h4>
       <% end %>
 
       </br>
 
-      <%= link_to edit_user_profile_path(current_user), class: 'btn btn-danger btn-block' do %>
+      <%= link_to edit_user_profile_path(current_user), class: 'btn brand-btn btn-block' do %>
         <i class="fa fa-pencil"></i> Edit
       <% end %>
 

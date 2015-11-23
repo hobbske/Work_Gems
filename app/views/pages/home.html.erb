@@ -1,6 +1,6 @@
 
 
-<div class="jumbotron text-center brand-type">
+<div class="jumbotron text-center brand-unit">
   <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
   <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
 </div>
@@ -9,18 +9,18 @@
   <% if user_signed_in? %>
 
   <div class="col-md-6">
-      <div class="well">
-        <h2 class="text-center brand-type"> Your Profile </h2>
+      <div class="brand-unit-main">
+        <h2 class="text-center"> Your Profile </h2>
         <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <% if current_user.profile %>
-          <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
+        <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
           <i class="fa fa-search"></i> View Profile
           <% end %>
 
 
         <% else %>
           <p class="text-center"> Create your profile so you can share your information and contribute to the community. </p>
-          <%= link_to new_user_profile_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
+        <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
             <i class="fa fa-user"></i> Create Your Profile
           <% end %>
         <% end %>
@@ -29,10 +29,10 @@
   </div>
 
   <div class="col-md-6">
-    <div class="well">
-      <h2 class="text-center brand-type"> The Community </h2>
+    <div class="brand-unit-main">
+      <h2 class="text-center"> The Community </h2>
       <p class="text-center"> Visit our community to meet other professional and share resources. </p>
-      <%= link_to user_path(current_user), class: 'btn btn-danger btn-lg btn-block' do %>
+      <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
         <i class="fa fa-users"></i>  View Community
       <% end %>
     </div>
@@ -41,17 +41,17 @@
   <% else %>
 
     <div class="col-md-6">
-      <div class="well">
+      <div class="brand-unit-main">
         <h2 class="text-center">Basic Membership</h2>
         <h4 class="text-center">Enter Description Here</h4>
-        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
+        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="well">
+      <div class="brand-unit-main">
         <h2 class="text-center">Pro Membership</h2>
         <h4 class="text-center">Enter Description Here</h4>
-        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
+        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
 
