@@ -15,7 +15,7 @@ class FeedbacksController < ApplicationController
 
       flash[:success] = "Feedback Successfully Sent."
       redirect_to new_feedback_path
-   
+
     else
       flash[:danger] = "Error! Feedback Not Sent."
       redirect_to new_feedback_path

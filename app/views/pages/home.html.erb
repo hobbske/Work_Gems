@@ -10,16 +10,16 @@
 
   <div class="col-md-6">
       <div class="brand-unit-main">
-        <h2 class="text-center"> Your Profile </h2>
+        <h2 class="text-center"> Profile </h2>
         <% if current_user.profile %>
         <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
         <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-          <i class="fa fa-search"></i> View Profile
+          <i class="fa fa-eye"></i> View
           <% end %>
 
 
         <% else %>
-          <p class="text-center"> Create your profile so you can share your information and contribute to the community. </p>
+          <p class="text-center"> Create your profile so you can contribute to the community. </p>
         <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
             <i class="fa fa-user"></i> Create Your Profile
           <% end %>
@@ -30,10 +30,10 @@
 
   <div class="col-md-6">
     <div class="brand-unit-main">
-      <h2 class="text-center"> The Community </h2>
+      <h2 class="text-center"> Community </h2>
       <p class="text-center"> Visit our community to meet other professional and share resources. </p>
-      <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-        <i class="fa fa-users"></i>  View Community
+      <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
+        <i class="fa fa-users"></i>  Visit
       <% end %>
     </div>
   </div
@@ -42,15 +42,15 @@
 
     <div class="col-md-6">
       <div class="brand-unit-main">
-        <h2 class="text-center">Basic Membership</h2>
-        <h4 class="text-center">Enter Description Here</h4>
+        <h3 class="text-center"><strong>Basic Membership</strong></h3>
+        <h5 class="text-center">Enter Description Here</h5>
         <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="brand-unit-main">
-        <h2 class="text-center">Pro Membership</h2>
-        <h4 class="text-center">Enter Description Here</h4>
+        <h3 class="text-center"><strong>Pro Membership</strong></h3>
+        <h5 class="text-center">Enter Description Here</h5>
         <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>

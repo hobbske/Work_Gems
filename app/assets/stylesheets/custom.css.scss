@@ -19,9 +19,15 @@ body {
   padding: 10px;
 }
 
-.brand-type {
-    color: #cf4001;
+.brand-text-red {
+    color: #cf4001; // red
 }
+
+.brand-text-white {
+    color: #F5F5F5; // white
+}
+
+
 
 .brand-back {
   background-color: #cf4001;
@@ -114,7 +120,9 @@ body {
 
 .brand-unit-main {
     position: relative;
-    padding: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
     // color: #F5F5F5; // white
     color: #cf4001; // red
     text-align: center;
@@ -122,5 +130,18 @@ body {
     // background: rgba(207, 64, 1, 1); //red
     // background: #CF4001;
     background: rgba(255,255,255,.6); // white
+
+}
+
+.brand-unit-text {
+    position: relative;
+    padding: 20px;
+    color: #F5F5F5; // white
+    // color: #cf4001; // red
+    text-align: center;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    background: rgba(207, 64, 1, .8); //red
+/*     background: #CF4001; */
+    // background: rgba(255,255,255,.5); // white
 
 }
