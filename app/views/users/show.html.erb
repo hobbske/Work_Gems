@@ -8,14 +8,19 @@
 
       <h5 class="brand-unit-text"> <%= @user.profile.description %>  </h5>
       <p class="text-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
-      <h5> <strong>(w): </strong> <%= @user.profile.work_number %> -- <strong>(m): </strong><%= @user.profile.mobile_number %>  </h5>
+      
 
 
       <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
+        <h5> <strong>(w): </strong> <%= @user.profile.work_number %> -- <strong>(m): </strong><%= @user.profile.mobile_number %>  </h5>
+      
+      <h5> <strong>Email: </strong><%= @user.profile.contact_email %> </h5>
+      
         <h5> <strong>Name: </strong><%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %></h5>
 
         <h5> <strong>Company: </strong><%= @user.profile.company_name %> </h5>
-        <h5>
+        
+      <h5>
           <%= link_to @user.profile.facebook_url do %>
             <i class="fa fa-facebook-square"></i> <%= @user.profile.facebook_url %>
           <% end %>

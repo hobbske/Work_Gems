@@ -1,15 +1,75 @@
+
 <div class="row">
-  <div class="col-sm-12 text-center brand-unit">
-   
-      <h2>Community</h2>
-      <p>Placeholder</p>
+
+  <div class="col-xs-12">
+    <div class="brand-unit">
+
+      <h2>Meet The Community <i class="fa fa-users"></i></h2>
+      <p>Placeholder.</p>
+
+    </div>
   </div>
-  <div class="col-sm-12 ">
+
+
+
+  <div class="col-xs-12">
     <div class="brand-unit-main">
 
-      <h2>Table List</h2>
+      <table class="table table-striped table-bordered table-hover brand-unit-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Profession</th>
+            <th class="text-center">Company</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Mobile</th>
+            <th class="text-center">LinkedIn</th>
+            <th class="text-center">Facebook</th>
+          </tr>
+        </thead>
+        <% @users.each do |user| %>
+          <% if user.profile %>
+            <tbody>
+              <tr>
+                <th class="index-table-text"><%= image_tag user.profile.avatar.url(:thumb) %></th>
+                <th class="index-table-text"><%= user.profile.first_name %> <%= user.profile.last_name %></th>
+                <th class="index-table-text"><%= user.profile.profession %></th>
+                <th class="index-table-text"><%= user.profile.company_name %></th>
+                <th class="index-table-icon">
+                  <% if user.profile.contact_email %>
+                  <%= link_to user.profile.contact_email do %>
+                      <i class="fa fa-envelope"></i>
+                    <% end %>
+                  <% end %>
+                </th>
+                <th class="index-table-icon">
+                  <% if user.profile.mobile_number %>
+                  <%= link_to user.profile.mobile_number do %>
+                      <i class="fa fa-mobile"></i>
+                    <% end %>
+                  <% end %>
+                </th>
+                <th class="index-table-icon">
+                  <% if user.profile.linkedin_url %>
+                  <%= link_to user.profile.linkedin_url do %>
+                      <i class="fa fa-linkedin-square"></i>
+                    <% end %>
+                  <% end %>
+                </th>
+                <th class="index-table-icon">
+                  <% if user.profile.facebook_url %>
+                    <%= link_to user.profile.facebook_url do %>
+                      <i class="fa fa-facebook-square"></i>
+                    <% end %>
+                  <% end %>
+                </th>
+              </tr>
+            </tbody>
+          <% end %>
+        <% end %>
+      </table>
 
-  
     </div>
   </div>
 </div>

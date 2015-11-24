@@ -8,6 +8,9 @@ body {
   background-image: url("wood copy.jpg")
 }
 
+.table > tbody > tr > th {
+     vertical-align: middle;
+}
 
 .alert-notice {
   color: #8a6d3b;
@@ -115,7 +118,6 @@ body {
     background: rgba(207, 64, 1, .8); //red
 /*     background: #CF4001; */
     // background: rgba(255,255,255,.5); // white
-
 }
 
 .brand-unit-main {
@@ -144,4 +146,28 @@ body {
 /*     background: #CF4001; */
     // background: rgba(255,255,255,.5); // white
 
+}
+
+.index-table-text {
+  font-size: 11px;
+  font-weight: 100px;
+  color: black;
+  text-align: center;
+}
+
+.index-table-icon {
+  font-size: 28px;
+  text-align: center;
+}
+
+.brand-unit-table {
+    position: relative;
+    padding: 20px;
+    color: #F5F5F5; // white
+    // color: #cf4001; // red
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: rgba(207, 64, 1, .8); //red
+/*     background: #CF4001; */
+    // background: rgba(255,255,255,.5); // white
 }
