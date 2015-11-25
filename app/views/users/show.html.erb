@@ -1,10 +1,9 @@
-
-
 <div class="row">
+ 
   <div class="col-md-6 col-md-offset-3">
     <div class="brand-unit-main">
 
-      <h3 class="text-center"><%= profession_icon %> <%= @user.profile.profession %>  Profile</h3>
+      <h3 class="text-center"><%= profession_icon %> <%= @user.profile.profession %></h3>
 
       <h5 class="brand-unit-text"> <%= @user.profile.description %>  </h5>
       <p class="text-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>

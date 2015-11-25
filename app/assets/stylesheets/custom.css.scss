@@ -4,6 +4,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
+h2 {
+  margin-top: 10px;
+}
 body {
   background-image: url("wood copy.jpg")
 }
@@ -155,11 +159,13 @@ body {
   text-align: center;
 }
 
+
 .index-table-icon {
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
 }
 
+// Styles for index.html.erb table
 .brand-unit-table {
     position: relative;
     padding: 20px;
