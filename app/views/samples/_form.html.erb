@@ -1,4 +1,5 @@
-<%= form_for @sample, :url user_samples_path => { :action => :create, :id => @user_id }  do |f| %>
+
+<%= form_for @sample, url: new_user_sample_path, :html => { :multipart => true } do |f| %>
   <div class="form-group text-left">
     <%= f.label :category %>
     <%= f.text_field :category, class: 'form-control' %>

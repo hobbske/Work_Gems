@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
-  has_one :profile
-  has_many :samples
+  has_one :profile, dependent: :destroy
+  has_many :samples, dependent: :destroy
   attr_accessor :stripe_card_token
 
   def save_with_payment

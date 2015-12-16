@@ -34,14 +34,14 @@
                 <th class="index-table-text"><%= user.profile.company_name %></th>
                 <th class="index-table-icon">
                   <% if user.profile.contact_email %>
-                  <%= link_to user.profile.contact_email do %>
+                    <%= link_to user.profile.contact_email do %>
                       <i class="fa fa-envelope"></i>
                     <% end %>
                   <% end %>
                 </th>
                 <th class="index-table-icon">
                   <% if user.profile.mobile_number %>
-                  <%= link_to user.profile.mobile_number do %>
+                    <%= link_to user.profile.mobile_number do %>
                       <i class="fa fa-mobile"></i>
                     <% end %>
                   <% end %>
