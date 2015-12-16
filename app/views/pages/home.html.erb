@@ -19,7 +19,7 @@
 
 
         <% else %>
-          <p class="text-center"> Create your profile so you can contribute to the community. </p>
+          <p class="text-center"> Create a profile to join and contribute to the community. </p>
         <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
             <i class="fa fa-user"></i> Create Your Profile
           <% end %>
@@ -31,7 +31,7 @@
   <div class="col-md-6">
     <div class="brand-unit-main">
       <h2 class="text-center"> Community </h2>
-      <p class="text-center"> Visit our community to meet other professional and share resources. </p>
+      <p class="text-center"> Visit our community to meet other professionals and share resources. </p>
       <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
         <i class="fa fa-users"></i>  Visit
       <% end %>
@@ -42,16 +42,29 @@
 
     <div class="col-md-6">
       <div class="brand-unit-main">
-        <h3 class="text-center"><strong>Basic Membership</strong></h3>
-        <h5 class="text-center">Enter Description Here</h5>
-        <%= link_to "Sign up for free", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
+        <h3 class="text-center"><strong>Introductory Membership</strong></h3>
+        <h5>  60 days <strong>FREE</strong></h5>
+        <ul class="text-left">
+          <li> <strong>$10</strong> per month </li>
+          <li> Access to WorkGems community </li>
+          <li> Create up to <strong>5</strong> categories </li>
+          <li> Showcase up to <strong>10</strong> gems per category </li>
+        </ul>
+
+        <%= link_to "Sign up for free today", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="brand-unit-main">
         <h3 class="text-center"><strong>Pro Membership</strong></h3>
-        <h5 class="text-center">Enter Description Here</h5>
-        <%= link_to "Sign up for $10/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
+        <h5> _____________________ </h5>
+        <ul class="text-left">
+          <li> <strong>$20</strong> per month </li>
+          <li> Access to WorkGems community </li>
+          <li> Create up to <strong>20</strong> categories </li>
+          <li> Showcase up to <strong>10</strong> gems per category </li>
+        </ul>
+        <%= link_to "Sign up for $20/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
 

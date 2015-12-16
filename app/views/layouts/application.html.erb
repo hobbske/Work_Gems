@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workgems</title>
+  <title>WorkGems</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag "https://js.stripe.com/v2/", type: 'text/javascript' %>
   <%= javascript_include_tag 'application' %>
@@ -31,10 +31,15 @@
         <li><%= link_to "About", about_path %></li>
 
         <% if user_signed_in? %>
+          <li>
+            <%= link_to user_samples_path(current_user) do %>
+              New<i class="fa fa-diamond"></i>Gem
+            <% end %>
+          </li>
           <li><%= link_to "Showcase", "#" %></li>
           <li><%= link_to "Community", users_path %></li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "My Account", edit_user_registration_path %></li>          
+          <li><%= link_to "My Account", edit_user_registration_path %></li>
           <li><%= link_to "Feedback", new_feedback_path %></li>
           <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>
         <% else %>

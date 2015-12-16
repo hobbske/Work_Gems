@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125161636) do
+ActiveRecord::Schema.define(version: 20151216000531) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.string   "name"
@@ -19,16 +19,6 @@ ActiveRecord::Schema.define(version: 20151125161636) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "gems", force: :cascade do |t|
-    t.string   "category"
-    t.string   "title"
-    t.string   "description"
-    t.boolean  "marquee"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -59,6 +49,26 @@ ActiveRecord::Schema.define(version: 20151125161636) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "samples", force: :cascade do |t|
+    t.string   "category"
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "marquee"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "img_before_file_name"
+    t.string   "img_before_content_type"
+    t.integer  "img_before_file_size"
+    t.datetime "img_before_updated_at"
+    t.string   "img_after_file_name"
+    t.string   "img_after_content_type"
+    t.integer  "img_after_file_size"
+    t.datetime "img_after_updated_at"
+  end
+
+  add_index "samples", ["user_id"], name: "index_samples_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
