@@ -12,8 +12,19 @@ body {
   background-image: url("wood copy.jpg")
 }
 
-.table > tbody > tr > th {
-     vertical-align: middle;
+table > tbody > tr > th {
+  vertical-align: middle;
+  max-width: 90%;
+}
+
+table {
+  max-width: 90%;
+}
+
+
+
+img {
+  max-width: 90%;
 }
 
 .alert-notice {
