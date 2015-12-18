@@ -1,45 +1,76 @@
 
-
-<div class="jumbotron text-center brand-unit">
-  <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
-  <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
-</div>
+<% if user_signed_in? && current_user.profile %>
+  <div class="jumbotron text-center brand-unit">
+    <h1> <%= current_user.profile.company_name %> </br> Work<i class="fa fa-diamond"></i>Gems </h1>
+    <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
+  </div>
+<% else %>
+  <div class="jumbotron text-center brand-unit">
+    <h1> Welcome to </br> Work<i class="fa fa-diamond"></i>Gems </h1>
+    <h3 class="padding"> The easiest way to showcase the gems of your work! </h3>
+  </div>
+<% end %>
 
 <div class="row">
+  
   <% if user_signed_in? %>
 
-  <div class="col-md-6">
-      <div class="brand-unit-main">
-        <h2 class="text-center"> Profile </h2>
-        <% if current_user.profile %>
-        <p class="text-center"> Keep your profile information current to stay better connected to the community. </p>
-        <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-          <i class="fa fa-eye"></i> View
+    <% if current_user.profile %>
+
+      <!-- NEW GEM  -->   
+      <div class="col-md-6">
+        <h2 class="text-center">  
+          <%= link_to new_user_sample_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+            <h2><i class="fa fa-diamond"></i> Add New Gem</h2>
           <% end %>
-
-
-        <% else %>
-          <p class="text-center"> Create a profile to join and contribute to the community. </p>
-        <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-            <i class="fa fa-user"></i> Create Your Profile
-          <% end %>
-        <% end %>
-
+        </h2>     
       </div>
-  </div>
 
-  <div class="col-md-6">
-    <div class="brand-unit-main">
-      <h2 class="text-center"> Community </h2>
-      <p class="text-center"> Visit our community to meet other professionals and share resources. </p>
-      <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
-        <i class="fa fa-users"></i>  Visit
+      <!-- SHOWCASE -->
+      <div class="col-md-6">
+        <h2 class="text-center">  
+          <%= link_to user_samples_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+            <h2><i class="fa fa-th"></i> View Showcase</h2>
+          <% end %>
+        </h2>     
+      </div>
+
+    <% else %>
+    <% end %>
+
+    <!-- PROFILE -->
+    <div class="col-md-6">
+      <% if current_user.profile %>
+
+        <h2 class="text-center">  
+          <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+            <h2><i class="fa fa-user"></i> View Profile</h2>
+          <% end %>
+        </h2>
+
+      <% else %>
+
+        <h2 class="text-center">  
+          <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+            <h2><i class="fa fa-user"></i> Create Profile</h2>
+          <% end %>
+        </h2>
+
       <% end %>
     </div>
-  </div
+
+    <!-- COMMUNITY -->
+    <div class="col-md-6">
+      <h2 class="text-center">  
+        <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
+          <h2><i class="fa fa-users"></i> Search Community</h2>
+        <% end %>
+      </h2>     
+    </div>
 
   <% else %>
 
+    <!-- BASIC PLAN -->
     <div class="col-md-6">
       <div class="brand-unit-main">
         <h3 class="text-center"><strong>Introductory Membership</strong></h3>
@@ -50,10 +81,11 @@
           <li> Create up to <strong>5</strong> categories </li>
           <li> Showcase up to <strong>10</strong> gems per category </li>
         </ul>
-
         <%= link_to "Sign up for free today", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
       </div>
     </div>
+
+    <!-- PRO PLAN -->
     <div class="col-md-6">
       <div class="brand-unit-main">
         <h3 class="text-center"><strong>Pro Membership</strong></h3>

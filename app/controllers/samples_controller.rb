@@ -1,11 +1,6 @@
 class SamplesController < ApplicationController
   before_action :authenticate_user!
   before_action :only_current_user
-
-  # def show
-  #   @user = User.find(params[:user_id])
-  # end
-
   def new
     @user = User.find(params[:user_id])
     @sample = @user.samples.build
@@ -13,16 +8,25 @@ class SamplesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @sample = @user.samples_build(sample_params)
+    @sample = @user.samples.build(sample_params)
     if @sample.save
       flash[:success] = "Your Gem Has Been Created!"
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_samples_path( params[:user_id] )
     else
       render action: :new
     end
   end
 
   def edit
+  end
+
+  def show
+    @user = User.find(params[:user_id])
+  end
+
+  def index
+    @user = User.find(params[:user_id])
+    @samples = @user.samples
   end
 
   private

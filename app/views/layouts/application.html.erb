@@ -31,19 +31,23 @@
         <li><%= link_to "About", about_path %></li>
 
         <% if user_signed_in? %>
-          <li>
-            <%= link_to new_user_sample_path(current_user) do %>
-              New<i class="fa fa-diamond"></i>Gem
-            <% end %>
-          </li>
-          <li><%= link_to "Showcase", "#" %></li>
-          <li><%= link_to "Community", users_path %></li>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "My Account", edit_user_registration_path %></li>
-          <li><%= link_to "Feedback", new_feedback_path %></li>
-          <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>
+
+          <% if current_user.profile %>
+            <li>
+              <%= link_to new_user_sample_path(current_user) do %>
+                New<i class="fa fa-diamond"></i>Gem
+              <% end %>
+            </li>
+            <li><%= link_to "Showcase", user_samples_path(current_user)%></li>
+            <li><%= link_to "Community", users_path %></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "My Account", edit_user_registration_path %></li>
+            <li><%= link_to "Feedback", new_feedback_path %></li>           
+          <% else %><% end %>
+                       
+          <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>        
         <% else %>
-          <li><%= button_to "Login", new_user_session_path, class: 'btn nav-brand-btn navbar-btn', method: :get %></li>
+          <li><%= button_to "Login", new_user_session_path, method: :get, class: 'btn nav-brand-btn navbar-btn' %></li>
         <% end %>
       </ul>
       <div class="nav navbar-nav navbar-right">
