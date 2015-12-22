@@ -55,12 +55,12 @@ img {
   margin: auto;
 /*   margin-top: 10px;
   margin-bottom: 10px; */
-  background: #cf4001;
-  background-image: -webkit-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -moz-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -ms-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -o-linear-gradient(top, #cf4001, #cf4001);
-  background-image: linear-gradient(to bottom, #cf4001, #cf4001);
+  background: rgba(207, 64, 1, .5);
+  background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
+  background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
+  background-image: -ms-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
+  background-image: -o-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
+  background-image: linear-gradient(to bottom, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
@@ -78,12 +78,12 @@ img {
 }
 
 .brand-btn:hover {
-  background: rgb(255,173,10) 90%;
-  background-image: -webkit-linear-gradient(top, rgb(255,173,10) 90%, rgb(255,173,10) 90%);
-  background-image: -moz-linear-gradient(top, rgb(255,173,10) 90%, rgb(255,173,10) 90%);
-  background-image: -ms-linear-gradient(top, rgb(255,173,10) 90%, rgb(255,173,10) 90%);
-  background-image: -o-linear-gradient(top, rgb(255,173,10) 90%, rgb(255,173,10) 90%);
-  background-image: linear-gradient(to bottom, rgb(255,173,10) 90%, rgb(255,173,10) 90%);
+  background: rgba(255,173,10, .5) 90%;
+  background-image: -webkit-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -moz-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -ms-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -o-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: linear-gradient(to bottom, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
   text-decoration: none;
   color: #cf4001;
 }
