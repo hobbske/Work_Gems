@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
     <div class="brand-unit">
       <h2><i class="fa fa-th"></i> <%= @user.profile.company_name %> Showcase</h2>
@@ -8,12 +9,31 @@
 <div class="row">
   <% @samples.each do |sample| %>
 
-  <div class="col-md-4">
-    <div class="row">
-    <div class="brand-unit-main padding">
-      <%= image_tag sample.img_before.url(:medium) %> <%= image_tag sample.img_after.url(:medium) %>
+  <div class="col-md-4 text-center">
+    <div class="row brand-unit-main text-center">
+      
+      <div class="col-md-6">
+        <div class="row text-center">
+          <%= image_tag sample.img_before.url(:medium) %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row text-center">
+          <p><%= image_tag sample.img_after.url(:medium) %></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row text-center">
+          <p>Before</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row text-center">
+          <p>After</p>
+        </div>
+      </div>
+
     </div>
-    </div>     
   </div>
 
   <% end %>
@@ -49,4 +69,5 @@
         <% end %>
       </table>
     </div>
+</div>
 </div>
