@@ -4,10 +4,10 @@ class Sample < ActiveRecord::Base
   validates :category, :title, :description, presence: true
   # validates :image_after, :presence => true, :if => "image_before.blank?"
 
-  has_attached_file :img_before, styles: { xlarge: "500x500#", large: "300x300#", medium: "200x200#", small: "100x100#" }, default_url: "/images/:style/img_placeholder.png"
+  has_attached_file :img_before, styles: { carousel: "500x750#", large: "300x300#", medium: "200x200#", small: "100x100#" }, default_url: "/images/:style/img_placeholder.png"
   validates_attachment_content_type :img_before, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :img_after, styles: { xlarge: "500x500#", large: "300x300#", medium: "200x200#", small: "100x100#" }, default_url: "/images/:style/img_placeholder.png"
+  has_attached_file :img_after, styles: { carousel: "500x750#", large: "300x300#", medium: "200x200#", small: "100x100#" }, default_url: "/images/:style/img_placeholder.png"
   validates_attachment_content_type :img_after, content_type: /\Aimage\/.*\Z/
 
 end

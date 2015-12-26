@@ -1,73 +1,77 @@
 <div class="container">
-<div class="row">
-    <div class="brand-unit">
-      <h2><i class="fa fa-th"></i> <%= @user.profile.company_name %> Showcase</h2>
-      <h3>  </h3>
-    </div>
+  <div class="row">
+      <div class="brand-unit">
+        <h2><i class="fa fa-th"></i> <%= @user.profile.company_name %> Showcase</h2>
+        <h3>  </h3>
+      </div>
+  </div>
 </div>
 
-<div class="row">
-  <% @samples.each do |sample| %>
-
-  <div class="col-md-4 text-center">
-    <div class="row brand-unit-main text-center">
-      
-      <div class="col-md-6">
-        <div class="row text-center">
-          <%= image_tag sample.img_before.url(:medium) %>
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col-sm-12 brand-unit-main">
+       
+      <div id="owl-slider" class="owl-carousel">
+      <% @samples.each do |sample| %>
+        <div>
+          <%= image_tag sample.img_before.url(:large), class: "img-responsive carousel-img" %> <%= image_tag sample.img_after.url(:large), class: "img-responsive carousel-img" %>
+          <p>Before After</p>
+          <div>
+            <h3><%= sample.category %></h3>
+            <h4><%= sample.title %></h4>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row text-center">
-          <p><%= image_tag sample.img_after.url(:medium) %></p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row text-center">
-          <p>Before</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row text-center">
-          <p>After</p>
-        </div>
+      <% end %>
       </div>
 
     </div>
   </div>
-
-  <% end %>
 </div>
 
-<div class="row">
-    <!-- TABLE -->
-    <div class="brand-unit-main">
-      <table class="table table-striped table-bordered table-hover brand-unit-table">
-        <thead>
-          <tr>
-            <th class="text-center">Marquee</th>
-            <th class="text-center">Category</th>
-            <th class="text-center">Title</th>
-            <th class="text-center">Before</th>
-            <th class="text-center">After</th>           
-          </tr>
-        </thead>
-        <% @samples.each do |sample| %>        
-            <tbody>
-              <tr>
-                <th class="index-table-icon">
-                  <% if sample.marquee %>
-                    <i class="fa fa-star"></i>
-                  <% end %>
-                </th>
-                <th class="index-table-text"><%= sample.category %></th>
-                <th class="index-table-text"><%= sample.title %></th>
-                <th class="index-table-text"><%= image_tag sample.img_before.url(:small) %></th>
-                <th class="index-table-text"><%= image_tag sample.img_after.url(:small) %></th>              
-              </tr>
-            </tbody>   
-        <% end %>
-      </table>
+<!-- GALLERY -->
+<div class="container">
+  <div class="row">
+    <% @samples.each do |sample| %>
+
+    <div class="col-md-4 text-center">
+      <div class="row brand-unit-main text-center">
+
+        <h4> <strong><%= sample.title %></strong> </h4>
+        <p><%= sample.description %></p>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <%= image_tag sample.img_before.url(:medium) %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <p><%= image_tag sample.img_after.url(:medium) %></p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <p>Before</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <p>After</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row text-center">
+            <%= link_to user_sample_path(current_user, sample) do %>
+              <h5><i class="fa fa-eye"></i> View</h5>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <% end %>
+  </div>
+
+
 </div>
-</div>
+

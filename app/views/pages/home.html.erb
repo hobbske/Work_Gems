@@ -11,95 +11,97 @@
   </div>
 <% end %>
 
-<div class="row">
-  
-  <% if user_signed_in? %>
+<div class="container">
+  <div class="row">
+    
+    <% if user_signed_in? %>
 
-    <% if current_user.profile %>
+      <% if current_user.profile %>
 
-      <!-- NEW GEM  -->   
+        <!-- NEW GEM  -->   
+        <div class="col-md-6">
+          <h2 class="text-center">  
+            <%= link_to new_user_sample_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+              <h2><i class="fa fa-diamond"></i> Add New Gem</h2>
+            <% end %>
+          </h2>     
+        </div>
+
+        <!-- SHOWCASE -->
+        <div class="col-md-6">
+          <h2 class="text-center">  
+            <%= link_to user_samples_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+              <h2><i class="fa fa-th"></i> View Showcase</h2>
+            <% end %>
+          </h2>     
+        </div>
+
+      <% else %>
+      <% end %>
+
+      <!-- PROFILE -->
       <div class="col-md-6">
-        <h2 class="text-center">  
-          <%= link_to new_user_sample_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-            <h2><i class="fa fa-diamond"></i> Add New Gem</h2>
-          <% end %>
-        </h2>     
+        <% if current_user.profile %>
+
+          <h2 class="text-center">  
+            <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+              <h2><i class="fa fa-user"></i> View Profile</h2>
+            <% end %>
+          </h2>
+
+        <% else %>
+
+          <h2 class="text-center">  
+            <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
+              <h2><i class="fa fa-user"></i> Create Profile</h2>
+            <% end %>
+          </h2>
+
+        <% end %>
       </div>
 
-      <!-- SHOWCASE -->
+      <!-- COMMUNITY -->
       <div class="col-md-6">
         <h2 class="text-center">  
-          <%= link_to user_samples_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-            <h2><i class="fa fa-th"></i> View Showcase</h2>
+          <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
+            <h2><i class="fa fa-users"></i> Search Community</h2>
           <% end %>
         </h2>     
       </div>
 
     <% else %>
+
+      <!-- BASIC PLAN -->
+      <div class="col-md-6">
+        <div class="brand-unit-main">
+          <h3 class="text-center"><strong>Introductory Membership</strong></h3>
+          <h5>  60 days <strong>FREE</strong></h5>
+          <ul class="text-left">
+            <li> <strong>$10</strong> per month </li>
+            <li> Access to WorkGems community </li>
+            <li> Create up to <strong>5</strong> categories </li>
+            <li> Showcase up to <strong>10</strong> gems per category </li>
+          </ul>
+          <%= link_to "Sign up for free today", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
+        </div>
+      </div>
+
+      <!-- PRO PLAN -->
+      <div class="col-md-6">
+        <div class="brand-unit-main">
+          <h3 class="text-center"><strong>Pro Membership</strong></h3>
+          <h5> _____________________ </h5>
+          <ul class="text-left">
+            <li> <strong>$20</strong> per month </li>
+            <li> Access to WorkGems community </li>
+            <li> Create up to <strong>20</strong> categories </li>
+            <li> Showcase up to <strong>10</strong> gems per category </li>
+          </ul>
+          <%= link_to "Sign up for $20/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
+        </div>
+      </div>
+
     <% end %>
 
-    <!-- PROFILE -->
-    <div class="col-md-6">
-      <% if current_user.profile %>
-
-        <h2 class="text-center">  
-          <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-            <h2><i class="fa fa-user"></i> View Profile</h2>
-          <% end %>
-        </h2>
-
-      <% else %>
-
-        <h2 class="text-center">  
-          <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-            <h2><i class="fa fa-user"></i> Create Profile</h2>
-          <% end %>
-        </h2>
-
-      <% end %>
-    </div>
-
-    <!-- COMMUNITY -->
-    <div class="col-md-6">
-      <h2 class="text-center">  
-        <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
-          <h2><i class="fa fa-users"></i> Search Community</h2>
-        <% end %>
-      </h2>     
-    </div>
-
-  <% else %>
-
-    <!-- BASIC PLAN -->
-    <div class="col-md-6">
-      <div class="brand-unit-main">
-        <h3 class="text-center"><strong>Introductory Membership</strong></h3>
-        <h5>  60 days <strong>FREE</strong></h5>
-        <ul class="text-left">
-          <li> <strong>$10</strong> per month </li>
-          <li> Access to WorkGems community </li>
-          <li> Create up to <strong>5</strong> categories </li>
-          <li> Showcase up to <strong>10</strong> gems per category </li>
-        </ul>
-        <%= link_to "Sign up for free today", new_user_registration_path(plan: @basic_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
-      </div>
-    </div>
-
-    <!-- PRO PLAN -->
-    <div class="col-md-6">
-      <div class="brand-unit-main">
-        <h3 class="text-center"><strong>Pro Membership</strong></h3>
-        <h5> _____________________ </h5>
-        <ul class="text-left">
-          <li> <strong>$20</strong> per month </li>
-          <li> Access to WorkGems community </li>
-          <li> Create up to <strong>20</strong> categories </li>
-          <li> Showcase up to <strong>10</strong> gems per category </li>
-        </ul>
-        <%= link_to "Sign up for $20/month", new_user_registration_path(plan: @pro_plan.id), class: 'btn brand-btn btn-lg btn-block' %>
-      </div>
-    </div>
-
-  <% end %>
-
+  </div>
 </div>

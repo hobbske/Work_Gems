@@ -26,6 +26,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use Owl Carousel for gems slider
+gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
+
 # Use Paperclip for image upload.
 gem "paperclip", "~> 4.3"
 

@@ -29,6 +29,10 @@ class SamplesController < ApplicationController
     @samples = @user.samples
   end
 
+  def destroy
+
+  end
+
   private
 
   def sample_params
