@@ -4,53 +4,78 @@
     <div class="col-md-12 text-center">
       <div class="row brand-unit-main text-center">
 
-        <h4> <strong><%= @sample.title %></strong> </h4>
-        <p><%= @sample.description %></p>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <%= image_tag @sample.img_before.url(:large) %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p><%= image_tag @sample.img_after.url(:large) %></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p>Before</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p>After</p>
-          </div>
-        </div>
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-4">
               <div class="row text-center">
                 <%= link_to user_samples_path do %>
-                  <h3><i class="fa fa-hand-o-left"></i> Back</h3>
+                  <h4><i class="fa fa-hand-o-left"></i> Back</h4>
                 <% end %>
               </div>
             </div>
             <div class="col-md-4">
               <div class="row text-center">
                 <%= link_to user_samples_path do %>
-                  <h3><i class="fa fa-pencil"></i> Edit</h3>
+                  <h4><i class="fa fa-pencil"></i> Edit</h4>
                 <% end %>
               </div>
             </div>
             <div class="col-md-4">
               <div class="row text-center">
                 <%= link_to user_samples_path do %>
-                  <h3><i class="fa fa-paper-plane"></i> Send</h3>
+                  <h4><i class="fa fa-paper-plane"></i> Send</h4>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="row text-center">
+            <h4>Before</h4>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <h4>After</h4>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row text-center">
+            <%= image_tag @sample.img_before.url(:medium) %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row text-center">
+            <p><%= image_tag @sample.img_after.url(:medium) %></p>
+          </div>
+        </div>
+
+
+        <div class="container-fluid">
+          <table class="table brand-unit-text">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= @sample.category %></td>
+                <td><%= @sample.title %></td>
+                <td><%= @sample.description %>.com</td>
+                <td><%= @sample.created_at %></td>
+                <td><%= @sample.updated_at %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
 
       </div>
     </div>

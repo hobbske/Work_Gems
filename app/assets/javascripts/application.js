@@ -23,8 +23,8 @@ $(document).ready(function() {
  
       autoPlay: 4000, //Set AutoPlay to 4 seconds
       navigation : true, // Show next and prev buttons
-      slideSpeed : 300,
-      paginationSpeed : 400,
+      slideSpeed : 200,
+      paginationSpeed : 200,
       singleItem:true,
       transitionStyle : "fade",
       stopOnHover: true,

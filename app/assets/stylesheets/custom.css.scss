@@ -5,13 +5,35 @@
 @import "font-awesome";
 
 
-h2, h3 {
+h1 {
+  font-size: 4.0vmax;
+}
+h2 {
+  font-size: 3.0vmax;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+h3 {
+  font-size: 2.5vmax;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+h4 {
+  font-size: 1.6vmax;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+h5 {
+  font-size: 1.1vmax;
+}
+
 
 body {
   background-image: url("wood copy.jpg");
+}
+
+th, td {
+  text-align: center;
 }
 
 
@@ -51,10 +73,19 @@ img {
   background-color: #cf4001;
 }
 
+.brand:hover {
+  background: rgba(255,173,10, .5) 90%;
+  background-image: -webkit-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -moz-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -ms-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: -o-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background-image: linear-gradient(to bottom, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  text-decoration: none;
+  color: white;
+}
+
 .brand-btn {
   margin: auto;
-/*   margin-top: 10px;
-  margin-bottom: 10px; */
   background: rgba(207, 64, 1, .5);
   background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
   background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
@@ -72,7 +103,6 @@ img {
   color: white;
   font-size: 14px;
   font-weight: 100px;
-  // padding: 2% 2%;
   border: solid #cf3f01 1px;
   text-decoration: none;
 }
@@ -89,7 +119,10 @@ img {
 }
 
 .brand-btn-home {
-  margin: 5%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 80%;
   background: rgba(207, 64, 1, .5);
   background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
   background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
@@ -122,6 +155,8 @@ img {
   text-decoration: none;
   color: #cf4001;
 }
+
+
 
 .carousel-img {
   display:inline-block;

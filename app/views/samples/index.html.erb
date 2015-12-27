@@ -8,13 +8,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 brand-unit-main">
-    <div class="col-md-6 text-center">
-      <h4>Before</h4>
-    </div>
-    <div class="col-md-6 text-center">
-      <h4>After</h4>
-    </div>
+    <div class="col-xs-12 brand-unit-main brand">
+
+      <div class="col-xs-6 text-center">
+        <h4>Before</h4>
+      </div>
+      <div class="col-xs-6 text-center">
+        <h4>After</h4>
+      </div>
        
       <div id="owl-slider" class="owl-carousel">
       <% @samples.each do |sample| %>
@@ -33,63 +34,54 @@
   </div>
 </div>
 
+<!-- GALLERY -->
 <div class="container-fluid">
   <div class="row">
       <div class="brand-unit">
-        <h2><i class="fa fa-th"></i> <%= @user.profile.company_name %> Gallery</h2>
+        <h2><i class="fa fa-th"></i>Gallery</h2>
       </div>
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="container-fluid">
   <div class="row">
+    
     <% @samples.each do |sample| %>
-
-    <div class="col-md-3 text-center">
-      <div class="row brand-unit-main text-center">
-
-        <h4> <strong><%= sample.title %></strong> </h4>
-        <p><%= sample.description %></p>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <%= image_tag sample.img_before.url(:medium) %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p><%= image_tag sample.img_after.url(:medium) %></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p>Before</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p>After</p>
-          </div>
+      <div class="col-md-3 brand-unit-main brand">
+         
+        <div>   
+          <p> <strong><%= sample.title %></strong> </p>
+          <p><%= sample.description %></p>
+          <div>
+            <%= image_tag sample.img_before.url(:medium), class: "img-responsive carousel-img" %>
+            <%= image_tag sample.img_after.url(:medium), class: "img-responsive carousel-img" %>
+          </div>     
         </div>
 
-          <div class="col-md-6">
-           <div class="row text-center">         
-              <%= link_to user_sample_path(current_user, sample) do %>
-                <h5><i class="fa fa-eye"></i> View</h5>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-md-6">
-           <div class="row text-center">
-              <%= link_to user_sample_path(current_user, sample), method: :delete do %>
-                <h5><i class="fa fa-trash"></i> Delete</h5>
-              <% end %>
-            </div>
-          </div>
+
+        <div class="col-xs-6 text-center">    
+          <p>Before</p>
+        </div>
+        <div class="col-xs-6 text-center">    
+          <p>After</p>
+        </div>
+           
+
+        <div class="col-xs-6 text-center">         
+          <%= link_to user_sample_path(current_user, sample) do %>
+            <p><i class="fa fa-eye"></i> View</p>
+          <% end %>
+        </div>
+      
+        <div class="col-xs-6 text-center">      
+          <%= link_to user_sample_path(current_user, sample), method: :delete do %>
+            <p><i class="fa fa-trash"></i> Delete</p>
+          <% end %>
         </div>
 
-      </div>
-      <% end %>
-    </div>   
+      </div>  
+    <% end %> 
+
   </div>
+</div>
 
