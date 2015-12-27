@@ -19,41 +19,41 @@
       <% if current_user.profile %>
 
         <!-- NEW GEM  -->   
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
           <h2 class="text-center">  
-            <%= link_to new_user_sample_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-              <h2><i class="fa fa-diamond"></i> Add New Gem</h2>
+            <%= link_to new_user_sample_path(current_user), class: 'btn brand-btn-home btn-block' do %>
+              <h3><i class="fa fa-diamond"></i> Add New Gem</h3>
             <% end %>
           </h2>     
         </div>
 
         <!-- SHOWCASE -->
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
           <h2 class="text-center">  
-            <%= link_to user_samples_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-              <h2><i class="fa fa-th"></i> View Showcase</h2>
+            <%= link_to user_samples_path(current_user), class: 'btn brand-btn-home btn-block' do %>
+              <h3><i class="fa fa-th"></i> View Showcase</h3>
             <% end %>
           </h2>     
-        </div>
+        </div
 
       <% else %>
       <% end %>
 
       <!-- PROFILE -->
-      <div class="col-md-6">
+      <div class="col-md-6 text-center">
         <% if current_user.profile %>
 
           <h2 class="text-center">  
-            <%= link_to user_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-              <h2><i class="fa fa-user"></i> View Profile</h2>
+            <%= link_to user_path(current_user), class: 'btn brand-btn-home btn-block' do %>
+              <h3><i class="fa fa-user"></i> View Profile</h3>
             <% end %>
           </h2>
 
         <% else %>
 
           <h2 class="text-center">  
-            <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn btn-lg btn-block' do %>
-              <h2><i class="fa fa-user"></i> Create Profile</h2>
+            <%= link_to new_user_profile_path(current_user), class: 'btn brand-btn-home btn-block' do %>
+              <h3><i class="fa fa-user"></i> Create Profile</h3>
             <% end %>
           </h2>
 
@@ -61,10 +61,10 @@
       </div>
 
       <!-- COMMUNITY -->
-      <div class="col-md-6">
+      <div class="col-md-6 text-center">
         <h2 class="text-center">  
-          <%= link_to users_path, class: 'btn brand-btn btn-lg btn-block' do %>
-            <h2><i class="fa fa-users"></i> Search Community</h2>
+          <%= link_to users_path, class: 'btn brand-btn-home btn-block' do %>
+            <h3><i class="fa fa-users"></i> Search Community</h3>
           <% end %>
         </h2>     
       </div>

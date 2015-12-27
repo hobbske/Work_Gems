@@ -14,53 +14,53 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class='container'>
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class='container'>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        Work<i class="fa fa-diamond"></i>Gems
-      <% end %>
-
-    </div>
-    <div class="collapse navbar-collapse" id="main-nav-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-
-        <% if user_signed_in? %>
-
-          <% if current_user.profile %>
-            <li>
-              <%= link_to new_user_sample_path(current_user) do %>
-                New<i class="fa fa-diamond"></i>Gem
-              <% end %>
-            </li>
-            <li><%= link_to "Showcase", user_samples_path(current_user)%></li>
-            <li><%= link_to "Community", users_path %></li>
-            <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to "My Account", edit_user_registration_path %></li>
-            <li><%= link_to "Feedback", new_feedback_path %></li>           
-          <% else %><% end %>
-                       
-          <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>        
-        <% else %>
-          <li><%= button_to "Login", new_user_session_path, method: :get, class: 'btn nav-brand-btn navbar-btn' %></li>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          Work<i class="fa fa-diamond"></i>Gems
         <% end %>
-      </ul>
-      <div class="nav navbar-nav navbar-right">
 
       </div>
+      <div class="collapse navbar-collapse" id="main-nav-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
 
-    </div><!-- /.navbar-collapse -->
-  </div>
-</nav>
+          <% if user_signed_in? %>
+
+            <% if current_user.profile %>
+              <li>
+                <%= link_to new_user_sample_path(current_user) do %>
+                  New<i class="fa fa-diamond"></i>Gem
+                <% end %>
+              </li>
+              <li><%= link_to "Showcase", user_samples_path(current_user)%></li>
+              <li><%= link_to "Community", users_path %></li>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "My Account", edit_user_registration_path %></li>
+              <li><%= link_to "Feedback", new_feedback_path %></li>           
+            <% else %><% end %>
+                         
+            <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>        
+          <% else %>
+            <li><%= button_to "Login", new_user_session_path, method: :get, class: 'btn nav-brand-btn navbar-btn' %></li>
+          <% end %>
+        </ul>
+        <div class="nav navbar-nav navbar-right">
+
+        </div>
+
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
 
 <!-- <div class="container"> -->
 

@@ -1,6 +1,7 @@
 class SamplesController < ApplicationController
   before_action :authenticate_user!
   before_action :only_current_user
+  
   def new
     @user = User.find(params[:user_id])
     @sample = @user.samples.build
@@ -22,6 +23,7 @@ class SamplesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
+    @sample = @user.samples.find(params[:id])
   end
 
   def index
@@ -30,13 +32,16 @@ class SamplesController < ApplicationController
   end
 
   def destroy
-
+    @user = User.find(params[:user_id])
+    @sample = @user.samples.find(params[:id])
+    @sample.destroy
+    redirect_to user_samples_path
   end
 
   private
 
   def sample_params
-    params.require(:sample).permit(:category, :title, :description, :img_before, :img_after, :marquee)
+    params.require(:sample).permit(:id, :category, :title, :description, :img_before, :img_after, :marquee)
   end
 
   def only_current_user

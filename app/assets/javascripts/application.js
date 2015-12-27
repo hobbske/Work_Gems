@@ -21,12 +21,16 @@ $(document).ready(function() {
  
   $("#owl-slider").owlCarousel({
  
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
+      autoPlay: 4000, //Set AutoPlay to 4 seconds
       navigation : true, // Show next and prev buttons
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
-      transitionStyle : "fade"
+      transitionStyle : "fade",
+      stopOnHover: true,
+      touchDrag: true,
+      paginationNumbers: true,
+      navigation: false
  
       // "singleItem:true" is a shortcut for:
       // items : 1, 
