@@ -4,12 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
-
 group :production do
   # Use postgresql as database for ActiveRecord
   gem 'pg'
   # Use rails 12factor to enable all platform features
   gem 'rails_12factor', '~> 0.0.3'
+  # Use thin as server
+  gem 'thin'
 end
 
 
