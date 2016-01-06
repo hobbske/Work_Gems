@@ -27,8 +27,8 @@
         <% @users.each do |user| %>
           <% if user.profile %>
             <tbody>
-              <tr>
-                <th class="index-table-text"><%= image_tag user.profile.avatar.url(:thumb) %></th>
+              <tr class="brand">
+                <th class="index-table-text img-responsive"><%= image_tag user.profile.avatar.url(:thumb) %></th>
                 <th class="index-table-text"><%= user.profile.first_name %> <%= user.profile.last_name %></th>
                 <th class="index-table-text"><%= user.profile.profession %></th>
                 <th class="index-table-text"><%= user.profile.company_name %></th>
@@ -37,6 +37,7 @@
                     <%= link_to user.profile.contact_email do %>
                       <i class="fa fa-envelope"></i>
                     <% end %>
+                  <% else %>
                   <% end %>
                 </th>
                 <th class="index-table-icon">
