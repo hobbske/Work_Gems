@@ -74,7 +74,9 @@ gem 'spring'
 gem 'pg'
 # Use rails 12factor to enable all platform features
 gem 'rails_12factor', '~> 0.0.3'
-# Use thin as server
-gem 'thin'
+# Use puma as server on heroku
+gem 'puma'
+
+gem 'eventmachine', '~> 1.0', '>= 1.0.9.1'
 
 
