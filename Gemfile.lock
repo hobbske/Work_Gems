@@ -209,7 +209,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
-  bundler (~> 1.9, >= 1.9.7)
+  bundler (~> 1.11, >= 1.11.2)
   byebug
   coffee-rails (~> 4.1.0)
   daemons (~> 1.2, >= 1.2.3)
@@ -234,4 +234,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
