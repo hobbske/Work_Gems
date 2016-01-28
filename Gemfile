@@ -63,19 +63,17 @@ gem 'pry'
 gem 'web-console', '~> 2.0'
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'puma'
 end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring'
-
-# Use postgresql as database for ActiveRecord
-gem 'pg'
-# Use rails 12factor to enable all platform features
-gem 'rails_12factor', '~> 0.0.3'
-# Use puma as server on heroku
-gem 'puma'
 
 gem 'eventmachine', '~> 1.0', '>= 1.0.9.1'
 
