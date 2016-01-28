@@ -4,15 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
-group :production do
-  # Use postgresql as database for ActiveRecord
-  gem 'pg'
-  # Use rails 12factor to enable all platform features
-  gem 'rails_12factor', '~> 0.0.3'
-  # Use thin as server
-  gem 'thin'
-end
-
+gem 'bundler', '~> 1.9', '>= 1.9.7'
 
 # Use Bootstrap for general stylings
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -26,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'daemons', '~> 1.2', '>= 1.2.3'
 
 # Use Owl Carousel for gems slider
 gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
@@ -60,18 +54,27 @@ gem 'stripe', '~> 1.30', '>= 1.30.2'
 # Use Figaro to hide secret keys
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'byebug'
+gem 'pry'
+
+# Access an IRB console on exception pages or by using <%= console %> in views
+gem 'web-console', '~> 2.0'
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'pry'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  # Use postgresql as database for ActiveRecord
+  gem 'pg'
+  # Use rails 12factor to enable all platform features
+  gem 'rails_12factor', '~> 0.0.3'
+  # Use thin as server
+  gem 'thin'
 end
 

@@ -209,8 +209,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
+  bundler (~> 1.9, >= 1.9.7)
   byebug
   coffee-rails (~> 4.1.0)
+  daemons (~> 1.2, >= 1.2.3)
   devise (~> 3.5, >= 3.5.2)
   figaro (~> 1.1, >= 1.1.1)
   font-awesome-sass (~> 4.4.0)
