@@ -27,6 +27,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'daemons', '~> 1.2', '>= 1.2.3'
+
 # Use Owl Carousel for gems slider
 gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
 
