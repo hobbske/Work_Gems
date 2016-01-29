@@ -59,6 +59,9 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'byebug'
 gem 'pry'
 
+# Use thin for web server
+gem 'thin'
+
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', group: :development
 
@@ -69,7 +72,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma'
 end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
