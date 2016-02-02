@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 brand-unit-main brand">
+    <div class="col-xs-12 brand-unit-main brand well">
 
       <div class="col-xs-6 text-center">
         <h4>Before</h4>
@@ -43,43 +43,49 @@
   </div>
 </div>
 
-<div class="container-fluid well">
+<div class="container-fluid">
   <div class="row">
-    
+
     <% @samples.each do |sample| %>
-      <div class="col-md-3 brand-unit-main brand well gallery-space">
-         
-        <div>   
-          <p> <strong><%= sample.title %></strong> </p>
-          <p><%= sample.description %></p>
-          <div>
-            <%= image_tag sample.img_before.url(:medium), class: "img-responsive carousel-img" %>
-            <%= image_tag sample.img_after.url(:medium), class: "img-responsive carousel-img" %>
-          </div>     
-        </div>
 
-
-        <div class="col-xs-6 text-center">    
-          <p>Before</p>
-
-          <%= link_to user_sample_path(current_user, sample) do %>
-            <p><i class="fa fa-eye"></i> View</p>
-          <% end %>
-
-        </div>
-        <div class="col-xs-6 text-center">    
-          <p>After</p>
-          <%= link_to user_sample_path(current_user, sample), method: :delete do %>
-            <p><i class="fa fa-trash"></i> Delete</p>
-          <% end %>
-        </div>
-           
-
+    <div class="col-lg-3 gallery-space">
+      
       
 
-      </div>  
-    <% end %> 
+      <div class="row brand-unit-main brand well ">
+           
+          <div>   
+            <p> <strong><%= sample.title %></strong> </p>
+            <p><%= sample.description %></p>
+            <div>
+              <%= image_tag sample.img_before.url(:medium), class: "img-responsive carousel-img" %>
+              <%= image_tag sample.img_after.url(:medium), class: "img-responsive carousel-img" %>
+            </div>     
+          </div>
 
-  </div>
+
+          <div class="col-xs-6 text-center">    
+            <p>Before</p>
+
+            <%= link_to user_sample_path(current_user, sample) do %>
+              <p><i class="fa fa-eye"></i> View</p>
+            <% end %>
+          </div>
+
+          <div class="col-xs-6 text-center">    
+            <p>After</p>
+
+            <%= link_to user_sample_path(current_user, sample), method: :delete do %>
+              <p><i class="fa fa-trash"></i> Delete</p>
+            <% end %>
+          </div>
+
+        </div>  
+
+      </div>
+      <% end %>
+
+    </div>
+  
 </div>
 

@@ -28,7 +28,7 @@ h5 {
 }
 
 
-body {
+.background-img {
   background-image: url("wood copy.jpg");
 }
 
@@ -205,9 +205,9 @@ img {
 
 .brand-unit {
     position: relative;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
     color: #F5F5F5; // white
     // color: #cf4001; // red
     text-align: center;
@@ -222,10 +222,7 @@ img {
     margin: auto;
     // color: #F5F5F5; // white
     color: #cf4001; // red
-    border-color: #cf4001; // red
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 15px;
+    border-radius: 5px;
     text-align: center;
     text-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
     // background: rgba(207, 64, 1, 1); //red
@@ -252,7 +249,7 @@ img {
 }
 
 .gallery-space {
-  margin: 2px;
+  margin: 5px;
 }
 
 .index-table-text {
@@ -266,6 +263,12 @@ img {
 .index-table-icon {
   font-size: 24px;
   text-align: center;
+}
+
+#container {
+  height: 100%;
+  margin-top: 0;
+  margin-botto: 0;
 }
 
 #marquee {
