@@ -43,11 +43,11 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid well">
   <div class="row">
     
     <% @samples.each do |sample| %>
-      <div class="col-md-3 brand-unit-main brand">
+      <div class="col-md-3 brand-unit-main brand well">
          
         <div>   
           <p> <strong><%= sample.title %></strong> </p>
@@ -61,23 +61,21 @@
 
         <div class="col-xs-6 text-center">    
           <p>Before</p>
-        </div>
-        <div class="col-xs-6 text-center">    
-          <p>After</p>
-        </div>
-           
 
-        <div class="col-xs-6 text-center">         
           <%= link_to user_sample_path(current_user, sample) do %>
             <p><i class="fa fa-eye"></i> View</p>
           <% end %>
+
         </div>
-      
-        <div class="col-xs-6 text-center">      
+        <div class="col-xs-6 text-center">    
+          <p>After</p>
           <%= link_to user_sample_path(current_user, sample), method: :delete do %>
             <p><i class="fa fa-trash"></i> Delete</p>
           <% end %>
         </div>
+           
+
+      
 
       </div>  
     <% end %> 
