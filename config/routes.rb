@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :feedbacks
 
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
 
   # post '/users/:user_id/samples' => 'samples#create'
   get '/about' => 'pages#about'
