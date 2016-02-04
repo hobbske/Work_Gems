@@ -53,6 +53,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Devise for user auth
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
+# Use OmniAuto to sign in using Twitter, Facebook and Linkedin
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
+
 # Use Stripe for credit card processing
 gem 'stripe', '~> 1.30', '>= 1.30.2'
 
