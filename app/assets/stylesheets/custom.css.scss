@@ -286,13 +286,15 @@ img {
   text-align: center;
 }
 
-.nav-link > li >a {
+.nav-link > li > a {
   color:white;
 }
 
-.nav-link:hover > li > a {
+.nav-link >li >a:hover {
   color: #CF4001;
 }
+
+
 
 #container {
   height: 100%;
