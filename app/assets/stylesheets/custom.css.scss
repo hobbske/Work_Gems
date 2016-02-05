@@ -27,7 +27,7 @@ h5 {
   font-size: 1.1vmax;
 }
 
-nav {
+nav, navbar {
   background-color: #cf4001;
   color: #fff;
 }
@@ -81,6 +81,13 @@ img {
 
 .brand-back {
   background-color: #cf4001;
+  color: white;
+  border-color: white;
+}
+
+.btn-toggle {
+  background-color: white;
+  border-color: white;
 }
 
 .brand:hover {
@@ -178,14 +185,18 @@ img {
   margin-bottom: 3px;
 }
 
+.navbar-brand {
+  color: white;
+}
+
 .nav-brand-btn {
   margin: 10px;
-  background: #cf4001;
-  background-image: -webkit-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -moz-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -ms-linear-gradient(top, #cf4001, #cf4001);
-  background-image: -o-linear-gradient(top, #cf4001, #cf4001);
-  background-image: linear-gradient(to bottom, #cf4001, #cf4001);
+  background: #fff;
+  background-image: -webkit-linear-gradient(top, #fff, #fff);
+  background-image: -moz-linear-gradient(top, #fff, #fff);
+  background-image: -ms-linear-gradient(top, #fff, #fff);
+  background-image: -o-linear-gradient(top, #fff, #fff);
+  background-image: linear-gradient(to bottom, #fff, #fff);
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
@@ -194,11 +205,11 @@ img {
   -moz-box-shadow: 2px 4px 1px #666666;
   box-shadow: 2px 4px 1px #666666; */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: white;
+  color: #cf4001;
   font-size: 14px;
   font-weight: 100px;
   // padding: 2% 2%;
-  border: solid #cf3f01 1px;
+  border: solid #fff 1px;
   text-decoration: none;
 }
 
@@ -273,6 +284,14 @@ img {
 .index-table-icon {
   font-size: 24px;
   text-align: center;
+}
+
+.nav-link > li >a {
+  color:white;
+}
+
+.nav-link:hover > li > a {
+  color: #CF4001;
 }
 
 #container {
