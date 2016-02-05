@@ -18,10 +18,11 @@ class User < ActiveRecord::Base
 
   # from_omniAuth method
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.username = auth.info.nickname
+    # where(auth.slice(:provider, :uid)).first_or_create do |user|
+    #   user.provider = auth.provider
+    #   user.uid = auth.uid
+    #   user.username = auth.info.nickname
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     end
   end
 
@@ -39,7 +40,11 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
-  
+  private
+
+  def params
+    params.require(:user).permit(:name, :email, :provider, :uid)
+  end
 
 
 end

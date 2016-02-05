@@ -236,9 +236,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :twitter, ENV["TWITTER CONSUMER KEY"], ENV["TWITTER CONSUMER SECRET"]
-  config.omniauth :facebook, ENV["FACEBOOK CONSUMER KEY"], ENV["FACEBOOK CONSUMER SECRET"]
-  config.omniauth :linkedin, ENV["LINKEDIN CONSUMER KEY"], ENV["LINKEDIN CONSUMER SECRET"]
+  config.omniauth :twitter, 'hqPyuncUgyPjAtbuGmjsJ0slY', 'ffDP2d6fz1LRImiSESR6U48V95lTGZUojsvV7GqgLoATNdOcKW'
+  # config.omniauth :facebook, ENV["FACEBOOK CONSUMER KEY"], ENV["FACEBOOK CONSUMER SECRET"]
+  # config.omniauth :linkedin, ENV["LINKEDIN CONSUMER KEY"], ENV["LINKEDIN CONSUMER SECRET"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

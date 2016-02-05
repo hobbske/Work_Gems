@@ -27,10 +27,20 @@ h5 {
   font-size: 1.1vmax;
 }
 
-
-.background-img {
-  background-image: url("wood copy.jpg");
+nav {
+  background-color: #cf4001;
+  color: #fff;
 }
+
+body {
+  background-image: url("wood copy.jpg"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 
 th, td {
   text-align: center;
