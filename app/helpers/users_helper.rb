@@ -9,7 +9,6 @@ module UsersHelper
     else
       "<i class='fa fa-star''></i>".html_safe
     end
-
   end
 
 end

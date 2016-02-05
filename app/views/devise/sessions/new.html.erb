@@ -9,8 +9,23 @@
 
   <div class="col-md-6 col-md-offset-3">
     <div class="brand-unit-main">
+      <h2><u>Social Media</u></h2>
+      <br>
 
-      <h2>Log in</h2>
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+
+          <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-block btn-lg brand-btn" do %>
+            <span class="fa fa-<%="#{provider}"%>"></span> Sign in with <u><strong><%= "#{provider.to_s.titleize}" %></strong></u>
+          <% end %>
+
+
+        <% end -%>
+      <% end -%>
+
+      <hr>
+
+      <h2><u>Email</u></h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field form-group text-left">
@@ -32,11 +47,21 @@
 
         <div class="actions">
           <%= f.submit "Log in", class: 'btn brand-btn' %>
-          <%= button_to "Cancel", :back, class: 'btn brand-btn' %>
+          <%= link_to "Cancel", root_path, class: 'btn brand-btn' %>
         </div>
       <% end %>
+      
+      <br>
 
-      <%= render "devise/shared/links" %>
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+      <% end -%>
+
+      <hr>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+      <% end -%>
+      
     </div>
   </div>
 

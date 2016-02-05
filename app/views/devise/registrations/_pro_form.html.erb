@@ -42,5 +42,7 @@
 
   <div class="actions">
     <%= f.submit "Sign up", class: 'btn brand-btn', id: 'form-submit-btn' %>
+    <%= button_to "Cancel", destroy_user_session_path, method: :delete, class: 'btn brand-btn' %>
   </div>
+  <br>
 <% end %>
