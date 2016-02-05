@@ -237,8 +237,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :twitter, 'hqPyuncUgyPjAtbuGmjsJ0slY', 'ffDP2d6fz1LRImiSESR6U48V95lTGZUojsvV7GqgLoATNdOcKW'
-  # config.omniauth :facebook, ENV["FACEBOOK CONSUMER KEY"], ENV["FACEBOOK CONSUMER SECRET"]
-  # config.omniauth :linkedin, ENV["LINKEDIN CONSUMER KEY"], ENV["LINKEDIN CONSUMER SECRET"]
+  config.omniauth :facebook, '100743963601891', 'a05dedcce6ce9f7b5f7e68206926b178'
+  config.omniauth :linkedin, '775bu323volpzf', 'V1m8EJ2QXWvKt6aX'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
