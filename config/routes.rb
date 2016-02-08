@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: { registrations: 'users/registrations'}
   resources :users do
     resources :samples
     resource :profile
@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   resources :feedbacks
 
-
-  # post '/users/:user_id/samples' => 'samples#create'
   get '/about' => 'pages#about'
   root 'pages#home'
   

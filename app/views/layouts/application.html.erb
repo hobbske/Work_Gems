@@ -32,33 +32,54 @@
 
       </div>
       <div class="collapse navbar-collapse" id="main-nav-collapse">
-        <ul class="nav navbar-nav navbar-right nav-link">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About", about_path %></li>
+        <ul class="nav navbar-nav navbar-left nav-links">
+          <li class="<%= active_class(root_path) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= active_class(about_path) %>"><%= link_to "About", about_path %></li>
 
           <% if user_signed_in? %>
-
             <% if current_user.profile %>
-              <li>
+
+              <li class="<%= active_class(new_user_sample_path(current_user)) %>">
                 <%= link_to new_user_sample_path(current_user) do %>
                   New<i class="fa fa-diamond"></i>Gem
                 <% end %>
               </li>
-              <li><%= link_to "Showcase", user_samples_path(current_user)%></li>
-              <li><%= link_to "Community", users_path %></li>
-              <li><%= link_to "Profile", user_path(current_user) %></li>
-              <li><%= link_to "My Account", edit_user_registration_path %></li>
-              <li><%= link_to "Feedback", new_feedback_path %></li>           
-            <% else %><% end %>
-                         
+
+              <li class="<%= active_class(user_samples_path(current_user)) %>"><%= link_to "Showcase", user_samples_path(current_user)%></li>
+              <li class="<%= active_class(new_feedback_path) %>"><%= link_to "Feedback", new_feedback_path %></li>  
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="<%= active_class(user_path(current_user)) %>"><%= link_to "View Profile", user_path(current_user) %></li>
+                  <li class="<%= active_class(edit_user_registration_path) %>"><%= link_to "Change Password", edit_user_registration_path %></li>
+                  
+                  <li role="separator" class="divider"></li>
+                  <li class="<%= active_class(users_path) %>"><%= link_to "Community", users_path %></li>
+                </ul>
+              </li> 
+
+            <% end %>
+          <% end %>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right nav-links">
+          
+          <% if user_signed_in? %>
+
             <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn nav-brand-btn navbar-btn' %></li>        
+          
+              <% if current_user.profile %>
+
+            <li class="navbar-text"> Welcome Back,  <%= current_user.profile.first_name %></li>
+
+              <% end %>
+
           <% else %>
             <li><%= button_to "Login", new_user_session_path, method: :get, class: 'btn nav-brand-btn navbar-btn' %></li>
           <% end %>
-        </ul>
-        <div class="nav navbar-nav navbar-right">
 
-        </div>
+        </ul>
 
       </div><!-- /.navbar-collapse -->
     </div>
@@ -66,7 +87,7 @@
 
   <div class="container-fluid background-img">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div id="flash" class="col-md-6 col-md-offset-3">
         <% flash.each do |key, value| %>
           <%= content_tag :div, value, class: "alert alert-#{key}" %>
         <% end %>

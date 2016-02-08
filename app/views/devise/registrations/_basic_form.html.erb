@@ -1,35 +1,36 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'basic_form'}) do |f| %>
   <h5><%= devise_error_messages! %></h5>
 
-<%= hidden_field_tag 'plan', params[:plan] %>
+  <%= hidden_field_tag 'plan', params[:plan] %>
 
   <div class="field form-group text-left">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: 'form-control' %>
   </div>
 
-  <% if f.object.password_required? %>
-    <div class="field form-group text-left">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
+  
+  <div class="field form-group text-left">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-    </div>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "on", class: 'form-control' %>
+  </div>
 
-    <div class="field form-group text-left">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-    </div>
-  <% end %>
+  <div class="field form-group text-left">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "on", class: 'form-control' %>
+  </div>
+  
 
   <div class="actions">
     <%= f.submit "Sign up", class: 'btn brand-btn' %>
 
     <%= link_to "Cancel", new_user_registration_path, class: "btn brand-btn" , type: :reset %>
 
-    <%= button_to "Cancel", destroy_user_session_path, method: :delete, class: 'btn brand-btn' %>
   
   </div>
-  <br>
+
+  <br> 
+
 <% end %>

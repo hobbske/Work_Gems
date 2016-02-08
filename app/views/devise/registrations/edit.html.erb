@@ -36,10 +36,12 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
         </div>
 
-        <div class="field form-group text-left">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-        </div>
+        <% if f.object.encrypted_password.present? %>
+          <div class="field form-group text-left">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        <% end %>
 
         <div class="actions">
           <%= f.submit "Update", class: 'btn brand-btn' %>
