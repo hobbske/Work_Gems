@@ -2,17 +2,31 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="brand-unit-main img-responsive">
 
-      <div class="brand-unit">
-        <h4><%= profession_icon %> <%= @user.profile.company_name %></h4>
-        <h5> <%= @user.profile.description %> </h5>
-        <p class="img-responsive"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+      <div class="row brand-unit">
+
+        <div>
+          <h4><%= profession_icon %> <%= @user.profile.company_name %></h4>
+        </div>
+        
+        <br>
+
+        <div class="col-md-4 brand-unit-main">
+          <p class="img-responsive img-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+        </div>
+
+        <div class="col-md-8">
+          <div class="row border-white">
+            <h5 align="center"> <%= @user.profile.description %> </h5>
+          </div>
+        </div>
+        
       </div>         
 
       <hr>
 
       <div>
 
-        <h5 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h5>
+        <h3 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h3>
 
         <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
       
