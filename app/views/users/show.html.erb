@@ -1,47 +1,81 @@
 <div class="row">
- 
   <div class="col-md-6 col-md-offset-3">
     <div class="brand-unit-main img-responsive">
 
-      <h1 class="text-center"><%= profession_icon %> <%= @user.profile.profession %></h1>
+      <div class="brand-unit">
+        <h4><%= profession_icon %> <%= @user.profile.company_name %></h4>
+        <h5> <%= @user.profile.description %> </h5>
+        <p class="img-responsive"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+      </div>         
 
-      <h3 class="brand-unit-text"> <%= @user.profile.description %>  </h3>
-      <p class="text-center img-responsive"><%= image_tag @user.profile.avatar.url(:medium) %></p>
+      <hr>
 
-      <h3> <strong>Name: </strong><%= @user.profile.first_name %> <%= ' '%><%= @user.profile.last_name %></h3>
+      <div>
 
-      <h3> <strong>Company: </strong><%= @user.profile.company_name %> </h3>
+        <h5 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h5>
 
-      <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
-        
-        <h3> <i class="fa fa-building-o"> </i><strong> Work: </strong><a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a></h3>
+        <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
+      
+          <h5><i class="fa fa-building-o"> </i><strong> Work: </strong><a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a></h5>
+          <h5><i class="fa fa-mobile"> </i><strong> Mobile: </strong><a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a></h5>
 
-        <h3> <i class="fa fa-mobile"> </i><strong> Mobile: </strong><a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a></h3>
+          <h5> <strong>Email: </strong><a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a></h5>
+          
+          <h1>
+            <%= link_to @user.profile.facebook_url do %>
+              <i class="fa fa-facebook-square"></i> <% @user.profile.facebook_url %>
+            <% end %>
 
-        <h3> <strong>Email: </strong><a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a></h3>
+            <%= link_to @user.profile.linkedin_url do %>
+              <i class="fa fa-linkedin-square"></i> <% @user.profile.linkedin_url %>
+            <% end %>
+          </h1>
+        <% end %>
 
-        <h1>
-          <%= link_to @user.profile.facebook_url do %>
-            <i class="fa fa-facebook-square"></i> <% @user.profile.facebook_url %>
-          <% end %>
-          <%= link_to @user.profile.linkedin_url do %>
-            <i class="fa fa-linkedin-square"></i> <% @user.profile.linkedin_url %>
-          <% end %>
-        </h1>
+      </div>
 
-        <br>
+      <hr>
+      
+      <div>
 
-        <h3><a href="mailto:?subject=Here is a link to my profile --> url" title="Email link to profile"><button class="btn brand-btn btn-lg"><i class="fa fa-paper-plane"></i> Email Profile</button></a></h3>
+        <h3>
+          <div align="center" class="float-left">
+            <%= link_to @user.profile.linkedin_url, class: "btn btn-lg brand-btn" do %>
+              <i class="fa fa-paper-plane"> Send</i>
+            <% end %>
+          </div>
+          <div align="center" class="float-left">
+            <%= link_to edit_user_profile_path(current_user), class: "btn btn-lg brand-btn" do %>
+              <i class="fa fa-pencil"> Edit</i>
+            <% end %>
+          </div>
+          <div align="center" class="float-left">
+            <%= link_to root_path, class: "btn btn-lg brand-btn" do %>
+              <i class="fa fa-remove"> Cancel</i> 
+            <% end %>
+          </div>
+        </h3>
 
-      <% end %>
+      </div>
 
-      <%= link_to edit_user_profile_path(current_user), class: 'btn brand-btn btn-block' do %>
-        <i class="fa fa-pencil"></i> Edit
-      <% end %>
-
-
-      <p><%= link_to "Cancel", root_path, class: 'brand-text' %></p>
+      <br>
+      <br>          
 
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

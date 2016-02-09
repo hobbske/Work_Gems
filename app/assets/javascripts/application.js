@@ -17,6 +17,9 @@
 
 //= require_tree .
 
+
+// jQuery code
+
 $(document).ready(function() {
  
   $("#owl-slider").owlCarousel({
@@ -48,4 +51,41 @@ $(document).ready(function(){
   setTimeout(function(){
     $('#flash').remove();
   }, 5000);
- })
+ });
+
+
+$(document).ready(function(){
+  
+  var selector = '.nav li';
+
+  $(selector).on('click', function(){
+      $(selector).removeClass('active');
+      $(this).addClass('active');
+  });
+});
+
+
+$(document).ready(function(){
+
+  $('a[href="' + this.location.pathname + '"]').parents('ul,li').addClass('active');
+
+});
+
+
+// Owl Carousel Modal
+
+$(document).ready(function(){
+    var $modal = $('.modal').modal({
+      show: false 
+    });
+    
+    $('#mymodal').on('click', function() {
+        $modal.modal('show');
+    });
+});
+
+
+
+
+
+

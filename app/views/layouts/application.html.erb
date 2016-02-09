@@ -48,9 +48,9 @@
               <li class="<%= active_class(user_samples_path(current_user)) %>"><%= link_to "Showcase", user_samples_path(current_user)%></li>
               <li class="<%= active_class(new_feedback_path) %>"><%= link_to "Feedback", new_feedback_path %></li>  
 
-              <li class="dropdown">
+              <li class="dropdown nav-links">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu nav-links">
                   <li class="<%= active_class(user_path(current_user)) %>"><%= link_to "View Profile", user_path(current_user) %></li>
                   <li class="<%= active_class(edit_user_registration_path) %>"><%= link_to "Change Password", edit_user_registration_path %></li>
                   

@@ -6,25 +6,25 @@
 
 
 h1 {
-  font-size: 4.0vmax;
+  font-size: 2.4em;
 }
 h2 {
-  font-size: 3.0vmax;
+  font-size: 2.0em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 h3 {
-  font-size: 2.5vmax;
+  font-size: 1.8em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 h4 {
-  font-size: 1.6vmax;
+  font-size: 1.6em;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 h5 {
-  font-size: 1.1vmax;
+  font-size: 1.2em;
 }
 
 nav, navbar {
@@ -60,6 +60,9 @@ th, td {
   max-width: 100%;
 }
 
+i {
+  
+}
 
 img {
   max-width: 90%;
@@ -89,6 +92,16 @@ img {
   border-color: white;
 }
 
+.brand-modal {
+  background-color: white;
+  color: #cf4001;
+  border-color: #cf4001;
+}
+
+.modal-body {
+    max-height: 800px;
+}
+
 .btn-toggle {
   background-color: white;
   border-color: white;
@@ -101,6 +114,17 @@ img {
   background-image: -ms-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
   background-image: -o-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
   background-image: linear-gradient(to bottom, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  text-decoration: none;
+  color: white;
+}
+
+.brand-carousel:hover {
+  background: rgba(207, 64, 1, .5) 90%;
+  background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
+  background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
+  background-image: -ms-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
+  background-image: -o-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
+  background-image: linear-gradient(to bottom, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
   text-decoration: none;
   color: white;
 }
@@ -177,6 +201,14 @@ img {
   color: #cf4001;
 }
 
+.close {
+  color: white;
+}
+
+.float-left {
+  float: left;
+  width: 33%;
+}
 
 .twitter-btn {
   margin: auto;
@@ -280,7 +312,22 @@ img {
   color: #007BB6;
 }
 
+// Font Awesome Icon Stylings
+.fa-facebook-square {
+  color: #3b5998;
+}
 
+.fa-facebook-square:hover {
+  color: #CF4001;
+}
+
+.fa-linkedin-square {
+  color: #007BB6;
+}
+
+.fa-linkedin-square:hover {
+  color: #CF4001;
+}
 
 
 .carousel-img {
@@ -424,6 +471,11 @@ img {
     display: block;
 }
 
+.carousel-slider {
+  float: left;
+  width: 100%;
+}
+
 
 #container {
   height: 100%;
@@ -447,3 +499,4 @@ img {
 /*     background: #CF4001; */
     // background: rgba(255,255,255,.5); // white
 }
+
