@@ -61,7 +61,7 @@ hr {
 }
 
 body {
-  background: url(<%= asset_path 'wood_copy.jpg' %>); 
+  background: image-url('wood_copy.jpg'); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
