@@ -1,53 +1,55 @@
-<%= form_for @profile, url: user_profile_path, :html => { :multipart => true } do |f| %>
-  <div class="form-group text-left">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :company_name %>
-    <%= f.text_field :company_name, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label "Profession" %>
-    <%= f.select(:profession, options_for_select([['Construction', 'Construction'], ['Painter', 'Painter'], ['Photographer', 'Photographer']]), { placeholder: "Select One" }, class: 'form-control') %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label "Specialty" %>
-    <%= f.select(:specialty, options_for_select([['Individual', 'Individual'], ['Commercial', 'Commercial']]), class: 'form-control') %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :contact_email %>
-    <%= f.email_field :contact_email, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :work_number %>
-    <%= f.text_field :work_number, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :mobile_number %>
-    <%= f.text_field :mobile_number, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :linkedin_url %>
-    <%= f.text_field :linkedin_url, class: 'form-control' %>
-  </div>
-  <div class="form-group text-left">
-    <%= f.label :facebook_url %>
-    <%= f.text_field :facebook_url, class: 'form-control' %>
-  </div>
 
-<%= f.submit "Submit Profile", class: 'btn brand-btn'%>
 
-<% end %>
+  <%= form_for @profile, url: user_profile_path, :html => { :multipart => true } do |f| %>
+    <div class="form-group text-left">
+      <%= f.label :first_name, class: 'form-headers' %>
+      <%= f.text_field :first_name, class: 'form-control inputlg' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :last_name, class: 'form-headers' %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :avatar, class: 'form-headers' %>
+      <%= f.file_field :avatar, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :company_name, class: 'form-headers' %>
+      <%= f.text_field :company_name, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label "Profession", class: 'form-headers' %>
+      <%= f.select(:profession, options_for_select([['Construction', 'Construction'], ['Painter', 'Painter'], ['Photographer', 'Photographer']]), { placeholder: "Select One" }, class: 'form-control') %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label "Specialty", class: 'form-headers' %>
+      <%= f.select(:specialty, options_for_select([['Individual', 'Individual'], ['Commercial', 'Commercial']]), { placeholder: "Select One" }, class: 'form-control') %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :description, class: 'form-headers' %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :contact_email, class: 'form-headers' %>
+      <%= f.email_field :contact_email, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :work_number, class: 'form-headers' %>
+      <%= f.text_field :work_number, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :mobile_number, class: 'form-headers' %>
+      <%= f.text_field :mobile_number, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :linkedin_url, class: 'form-headers' %>
+      <%= f.text_field :linkedin_url, class: 'form-control' %>
+    </div>
+    <div class="form-group text-left">
+      <%= f.label :facebook_url, class: 'form-headers' %>
+      <%= f.text_field :facebook_url, class: 'form-control' %>
+    </div>
+
+  <%= f.submit "Submit Profile", class: 'btn brand-btn'%>
+
+  <% end %>
