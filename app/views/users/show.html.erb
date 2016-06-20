@@ -5,18 +5,16 @@
       <div class="row brand-unit">
 
         <div>
-          <h4><%= profession_icon %> <%= @user.profile.company_name %></h4>
+          <h2><%= profession_icon %> <%= @user.profile.company_name %></h2>
         </div>
-        
-        <br>
 
-        <div class="col-md-4 brand-unit-main">
+        <div class="brand-unit-main">
           <p class="img-responsive img-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
         </div>
 
-        <div class="col-md-8">
+        <div>
           <div class="row border-white">
-            <h5 align="center"> <%= @user.profile.description %> </h5>
+            <h4 class="text-center"> <%= @user.profile.description %> </h4>
           </div>
         </div>
         
@@ -26,14 +24,14 @@
 
       <div>
 
-        <h3 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h3>
+        <h2 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h2>
 
         <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
       
-          <h5><i class="fa fa-building-o"> </i><strong> Work: </strong><a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a></h5>
-          <h5><i class="fa fa-mobile"> </i><strong> Mobile: </strong><a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a></h5>
+          <h3><i class="fa fa-building-o"> </i><strong> Work: </strong><a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a></h3>
+          <h3><i class="fa fa-mobile"> </i><strong> Mobile: </strong><a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a></h3>
 
-          <h5> <strong>Email: </strong><a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a></h5>
+          <h3> <strong>Email: </strong><a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a></h3>
           
           <h1>
             <%= link_to @user.profile.facebook_url do %>
