@@ -105,6 +105,17 @@ $(document).ready(function(){
     });
 });
 
+// Send URL Link Modal
+
+$(document).ready(function(){
+    var $modal = $('.modal').modal({
+      show: false 
+    });
+    
+    $('#link_modal').on('click', function() {
+        $modal.modal('show');
+    });
+});
 
 
 /* users.js */

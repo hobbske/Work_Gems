@@ -28,31 +28,56 @@
             <h4><%= sample.title %></h4>
           </div>
         </div>
+
       <% end %>
       </div>
 
       
       <!-- Carousel Modal Begin -->
 
-      <div class="modal fade brand-main" data-backdrop="false">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal fade brand-main" data-backdrop="false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Send @sample.title link?</h4>
+              </div>
+              <!-- Modal Body -->
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="text-center">
+                      <%= link_to user_samples_path do %>
+                        <h4><i class="fa fa-hand-o-left"></i> Back</h4>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="text-center">
+                      <%= link_to user_samples_path do %>
+                        <h4><i class="fa fa-pencil"></i> Edit</h4>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="text-center">
+                      <%= link_to user_samples_path do %>
+                        <h4 id="link_modal"><i class="fa fa-paper-plane"></i> Send</h4>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
-      <!-- Carousel Modal End -->
+        <!-- Carousel Modal End -->  
 
 
     </div>
