@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :samples, dependent: :destroy
 
+
+
+  accepts_nested_attributes_for :samples
+
+
+  
+
   attr_accessor :stripe_card_token
 
   def save_with_payment

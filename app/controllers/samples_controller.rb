@@ -23,6 +23,18 @@ class SamplesController < ApplicationController
     @sample = @user.samples.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:user_id])
+    @sample = @user.samples.find(params[:id])
+    if @sample.update_attributes(sample_params)
+      flash[:success] = "Gem Updated Successfully!"
+      redirect_to user_samples_path
+    else
+      flash[:danger] = "Error. Please Resubmit. If you are not successful, please send feedback using the Feedback link in the navbar."
+      render action: :edit
+    end
+  end
+
   def show
     @user = User.find(params[:user_id])
     @sample = @user.samples.find(params[:id])
