@@ -30,7 +30,28 @@ $(document).ready(function() {
       paginationSpeed : 200,
       singleItem:true,
       transitionStyle : "fade",
-      stopOnHover: true,
+      stopOnHover: false,
+      touchDrag: true,
+      paginationNumbers: true,
+      navigation: false
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+
+  $("#owl-slider2").owlCarousel({
+ 
+      autoPlay: 4000, //Set AutoPlay to 4 seconds
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 200,
+      paginationSpeed : 200,
+      singleItem:true,
+      stopOnHover: false,
       touchDrag: true,
       paginationNumbers: true,
       navigation: false

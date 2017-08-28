@@ -4,78 +4,56 @@
     <div class="col-md-12 text-center">
       <div class="row brand-unit-main text-center">
 
-        <div class="col-md-12">
+
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-md-4">
-              <div class="row text-center">
-                <%= link_to user_samples_path do %>
-                  <h4><i class="fa fa-hand-o-left"></i> Back</h4>
-                <% end %>
+            <div class="col-xs-12 brand-unit-main brand-carousel well">
+
+              <div class="col-xs-6 text-center">
+                <h4>Before</h4>
+              </div>
+              <div class="col-xs-6 text-center">
+                <h4>After</h4>
+              </div>
+               
+              <div id="owl-slider2" class="owl-carousel carousel-slider">
+                
+                <div >
+                  <%= image_tag @sample.img_before.url(:carousel), class: "img-responsive carousel-img" %> 
+                  <%= image_tag @sample.img_after.url(:carousel), class: "img-responsive carousel-img" %>   
+                  <div>
+                    <h3><%= @sample.category %></h3>
+                    <h4><%= @sample.title %></h4>
+                  </div>
+                </div>
+
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="row text-center">
-                <%= link_to user_samples_path do %>
-                  <h4><i class="fa fa-pencil"></i> Edit</h4>
-                <% end %>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row text-center">
-                <%= link_to user_samples_path do %>
-                  <h4><i class="fa fa-paper-plane"></i> Send</h4>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="row text-center">
-            <h4>Before</h4>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <h4>After</h4>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="row text-center">
-            <%= image_tag @sample.img_before.url(:large) %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-            <p><%= image_tag @sample.img_after.url(:large) %></p>
           </div>
         </div>
 
 
-        <!-- <div class="container-fluid">
-          <table class="table brand-unit-text">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Created</th>
-                <th>Updated</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= @sample.category %></td>
-                <td><%= @sample.title %></td>
-                <td><%= @sample.description %>.com</td>
-                <td><%= @sample.created_at %></td>
-                <td><%= @sample.updated_at %></td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
-
+        <div class="col-xs-4">
+          <div class="text-center">
+            <%= link_to user_samples_path do %>
+              <h4><i class="fa fa-hand-o-left"></i> Back</h4>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <%= link_to edit_user_sample_path() do %>
+              <h4><i class="fa fa-pencil"></i> Edit</h4>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <%= link_to user_samples_path do %>
+              <h4><i class="fa fa-paper-plane"></i> Send</h4>
+            <% end %>
+          </div>
+        </div>
 
       </div>
     </div>

@@ -51,9 +51,12 @@ h5 {
 }
 
 nav, navbar {
-  background-color: #cf4001;
+  background-color: #C43f04;
+  border-color: #c43f04;
   color: #fff;
-  padding: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100px;
+  letter-spacing: 1.5px;
 }
 
 hr {
@@ -169,7 +172,7 @@ img {
   color: white;
 }
 
-.brand-carousel:hover {
+/*.brand-carousel:hover {
   background: rgba(207, 64, 1, .5) 90%;
   background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
   background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
@@ -178,7 +181,7 @@ img {
   background-image: linear-gradient(to bottom, rgba(207, 64, 1, .5) 90%, rgba(207, 64, 1, .5) 90%);
   text-decoration: none;
   color: white;
-}
+}*/
 
 .brand-btn {
   margin: auto;
@@ -199,7 +202,7 @@ img {
   color: white;
   font-size: 14px;
   font-weight: 100px;
-  border: solid #cf3f01 1px;
+  border: solid #C43f04 1px;
   text-decoration: none;
 }
 
@@ -211,7 +214,7 @@ img {
   background-image: -o-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
   background-image: linear-gradient(to bottom, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
   text-decoration: none;
-  color: #cf4001;
+  color: #C43f04;
 }
 
 .brand-btn-home {
@@ -219,12 +222,12 @@ img {
   margin-top: 5%;
   margin-bottom: 5%;
   max-width: 80%;
-  background: rgba(207, 64, 1, .5);
-  background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
-  background-image: -moz-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
-  background-image: -ms-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
-  background-image: -o-linear-gradient(top, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
-  background-image: linear-gradient(to bottom, rgba(207, 64, 1, .5), rgba(207, 64, 1, .5));
+  background: rgba(207, 64, 1, 1);
+  background-image: -webkit-linear-gradient(top, rgba(207, 64, 1, 1), rgba(207, 64, 1, 1));
+  background-image: -moz-linear-gradient(top, rgba(207, 64, 1, 1), rgba(207, 64, 1, 1));
+  background-image: -ms-linear-gradient(top, rgba(207, 64, 1, 1), rgba(207, 64, 1, 1));
+  background-image: -o-linear-gradient(top, rgba(207, 64, 1, 1), rgba(207, 64, 1, 1));
+  background-image: linear-gradient(to bottom, rgba(207, 64, 1, 1), rgba(207, 64, 1, 1));
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
@@ -242,12 +245,12 @@ img {
 }
 
 .brand-btn-home:hover {
-  background: rgba(255,173,10, .5) 90%;
-  background-image: -webkit-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
-  background-image: -moz-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
-  background-image: -ms-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
-  background-image: -o-linear-gradient(top, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
-  background-image: linear-gradient(to bottom, rgba(255,173,10, .5) 90%, rgba(255,173,10, .5) 90%);
+  background: rgba(255,173,10, 1) 90%;
+  background-image: -webkit-linear-gradient(top, rgba(255,173,10, 1) 90%, rgba(255,173,10, 1) 90%);
+  background-image: -moz-linear-gradient(top, rgba(255,173,10, 1) 90%, rgba(255,173,10, 1) 90%);
+  background-image: -ms-linear-gradient(top, rgba(255,173,10, 1) 90%, rgba(255,173,10, 1) 90%);
+  background-image: -o-linear-gradient(top, rgba(255,173,10, 1) 90%, rgba(255,173,10, 1) 90%);
+  background-image: linear-gradient(to bottom, rgba(255,173,10, 1) 90%, rgba(255,173,10, 1) 90%);
   text-decoration: none;
   color: #cf4001;
 }
