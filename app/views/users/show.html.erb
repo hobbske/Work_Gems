@@ -1,78 +1,86 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="brand-unit-main img-responsive">
+  <div class="col-xs-10 col-xs-offset-1">
+    <div class="business-card img-responsive">
 
-      <div class="row brand-unit">
-
-        <div>
-          <h2><%= profession_icon %> <%= @user.profile.company_name %></h2>
-        </div>
-
-        <div class="brand-unit-main">
-          <p class="img-responsive img-center"><%= image_tag @user.profile.avatar.url(:medium) %></p>
-        </div>
-
-        <div>
-          <div class="row border-white">
-            <h4 class="text-center"> <%= @user.profile.description %> </h4>
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="text-center">
+            <%= image_tag @user.profile.avatar.url(:medium), class: 'img-responsive img-center img-circle' %>              
           </div>
         </div>
-        
+
+        <div class="col-xs-8">
+          <h2 class="brand-text-red">
+            <%= profession_icon %> <%= @user.profile.company_name %>
+          </h2>
+          <br>
+          
+          <h3>
+            <%= @user.profile.first_name %> <%= @user.profile.last_name %>
+          </h3>
+
+          <br>
+          
+          <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
+          
+          <div class="text-left">
+            <h5>
+              <i class="fa fa-building-o"> </i> Work: <a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a>
+            </h5>
+            
+            <h5>
+              <i class="fa fa-mobile"> </i> Mobile: <a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a>
+            </h5>
+            
+            <h5>
+              <i class="fa fa-paper-plane"> </i> Email: <a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a>
+            </h5>
+          </div>
+
+          <% end %>
+        </div>  
       </div>         
 
       <hr>
 
       <div>
+        <h5 class="text-center brand-text-red"> 
+          <%= @user.profile.description %>            
+        </h5>
+        
+        <!-- <div>
+          <%= link_to @user.profile.facebook_url do %>
+            <i class="fa fa-facebook-square"></i> <% @user.profile.facebook_url %>
+          <% end %>
 
-        <h2 class="modal-title text-center"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h2>
-
-        <% if current_user.plan_id == 1 || current_user.plan_id == 2 %>
-      
-          <h3><i class="fa fa-building-o"> </i><strong> Work: </strong><a href="tel:<%= @user.profile.work_number %>" title="Call <%= @user.profile.first_name %> Work"><%= @user.profile.work_number %></a></h3>
-          <h3><i class="fa fa-mobile"> </i><strong> Mobile: </strong><a href="tel:<%= @user.profile.mobile_number %>" title="Call <%= @user.profile.first_name %> Mobile"><%= @user.profile.mobile_number %></a></h3>
-
-          <h3> <strong>Email: </strong><a href="mailto:<%= @user.profile.contact_email %>" title="Email <%= @user.profile.first_name %>"><%= @user.profile.contact_email %></a></h3>
-          
-          <h1>
-            <%= link_to @user.profile.facebook_url do %>
-              <i class="fa fa-facebook-square"></i> <% @user.profile.facebook_url %>
-            <% end %>
-
-            <%= link_to @user.profile.linkedin_url do %>
-              <i class="fa fa-linkedin-square"></i> <% @user.profile.linkedin_url %>
-            <% end %>
-          </h1>
-        <% end %>
+          <%= link_to @user.profile.linkedin_url do %>
+            <i class="fa fa-linkedin-square"></i> <% @user.profile.linkedin_url %>
+          <% end %>
+        </div> -->
 
       </div>
 
       <hr>
       
       <div>
-
-        <h3>
-          <div align="center" class="float-left">
-            <%= link_to @user.profile.linkedin_url, class: "btn btn-lg brand-btn" do %>
-              <i class="fa fa-paper-plane"> Send</i>
-            <% end %>
-          </div>
-          <div align="center" class="float-left">
-            <%= link_to edit_user_profile_path(current_user), class: "btn btn-lg brand-btn" do %>
-              <i class="fa fa-pencil"> Edit</i>
-            <% end %>
-          </div>
-          <div align="center" class="float-left">
-            <%= link_to root_path, class: "btn btn-lg brand-btn" do %>
-              <i class="fa fa-remove"> Cancel</i> 
-            <% end %>
-          </div>
-        </h3>
-
-      </div>
-
+        <div align="center" class="float-left">
+          <%= link_to @user.profile.linkedin_url, class: "btn btn-lg brand-btn" do %>
+            <i class="fa fa-paper-plane"> Send</i>
+          <% end %>
+        </div>
+        <div align="center" class="float-left">
+          <%= link_to edit_user_profile_path(current_user), class: "btn btn-lg brand-btn" do %>
+            <i class="fa fa-pencil"> Edit</i>
+          <% end %>
+        </div>
+        <div align="center" class="float-left">
+          <%= link_to root_path, class: "btn btn-lg brand-btn" do %>
+            <i class="fa fa-remove"> Cancel</i> 
+          <% end %>
+        </div>
+      </div> 
       <br>
-      <br>          
-
+      <br>  
     </div>
   </div>
 </div>

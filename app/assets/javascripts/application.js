@@ -68,15 +68,15 @@ $(document).ready(function() {
  
 });
 
+// Flash message timeout
 $(document).ready(function(){
   setTimeout(function(){
     $('#flash').remove();
   }, 5000);
- });
+});
 
-
-$(document).ready(function(){
-  
+// Highlight active tab from navbar
+$(document).ready(function(){  
   var selector = '.nav li';
 
   $(selector).on('click', function(){
@@ -161,4 +161,13 @@ $(document).ready(function() {
 
 });
 
+
+$(document).ready(function(){
+
+
+  $("tr[data-link]").click(function(){
+    window.location = this.getAttribute("data-link")
+  })
+
+});
 

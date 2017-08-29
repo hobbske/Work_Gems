@@ -35,6 +35,11 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @sample = @user.profile
+  end
+
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :avatar, :company_name, :profession, :specialty, :job_title, :work_number, :mobile_number, :linkedin_url, :facebook_url, :description, :contact_email)
